@@ -47,7 +47,7 @@ jobs:
 
     environment:
       name: github-pages
-#      url: ${{ steps.deployment.outputs.page_url }}
+      url: specht-labs.de
 
     steps:
       - name: Setup GitHub Pages
