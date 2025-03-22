@@ -47,7 +47,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: specht-labs.de
+      url: https://specht-labs.de
 
     steps:
       - name: Setup GitHub Pages
