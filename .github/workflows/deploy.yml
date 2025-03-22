@@ -1,10 +1,14 @@
-name: deploy
+name: Publish Website
 
 on:
   # Deployment is triggered whenever a push is made to the main branch.
   push:
     branches: [main]
   workflow_dispatch:
+
+permissions:
+  id-token: write
+  pages: write
 
 jobs:
   docs:
