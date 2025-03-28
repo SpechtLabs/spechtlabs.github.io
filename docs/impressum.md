@@ -1,8 +1,9 @@
 ---
 title: impressum
 createTime: 2025/03/23 14:04:11
-permalink: /article/vopku8z5/
+permalink: /impressum/
 ---
+
 # Impressum
 Angaben gemäß § 5 TMG
 

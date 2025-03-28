@@ -1,6 +1,9 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
+import {path} from '@vuepress/utils'
+//import pkg from '@vuepress/plugin-register-components';
+//const { registerComponentsPlugin } = pkg;
 
 export default defineUserConfig({
   base: '/',
@@ -16,6 +19,12 @@ export default defineUserConfig({
   bundler: viteBundler(),
   shouldPrefetch: false, // 站点较大，页面数量较多时，不建议启用
 
+//  plugins: [
+//      registerComponentsPlugin({
+//          componentsDir: path.resolve(__dirname, './components'),
+//      }),
+//  ],
+
   theme: plumeTheme({
     /* 添加您的部署域名, 有助于 SEO, 生成 sitemap */
     // hostname: 'https://your_site_url',
@@ -26,7 +35,7 @@ export default defineUserConfig({
      docsBranch: 'main',
 
     /* 页内信息 */
-     editLink: true,
+     editLink: false,
      lastUpdated: true,
      contributors: true,
     // changelog: false,
@@ -48,49 +57,8 @@ export default defineUserConfig({
     /* 博客文章页面链接前缀 */
     article: '/article/',
 
-    /**
-     * 编译缓存，加快编译速度
-     * @see https://theme-plume.vuejs.press/config/basic/#cache
-     */
     cache: 'filesystem',
-
-    /**
-     * 为 markdown 文件自动添加 frontmatter 配置
-     * @see https://theme-plume.vuejs.press/config/basic/#autofrontmatter
-     */
-    // autoFrontmatter: {
-    //   permalink: true,  // 是否生成永久链接
-    //   createTime: true, // 是否生成创建时间
-    //   title: true,      // 是否生成标题
-    // },
-
-    /* 本地搜索, 默认启用 */
     search: { provider: 'local' },
-
-    /**
-     * Algolia DocSearch
-     * 启用此搜索需要将 本地搜索 search 设置为 false
-     * @see https://theme-plume.vuejs.press/config/plugins/search/#algolia-docsearch
-     */
-    // search: {
-    //   provider: 'algolia',
-    //   appId: '',
-    //   apiKey: '',
-    //   indexName: '',
-    // },
-
-    /**
-     * Shiki 代码高亮
-     * @see https://theme-plume.vuejs.press/config/plugins/code-highlight/
-     */
-//     codeHighlighter: {
-//       twoslash: true, // 启用 twoslash
-//       whitespace: true, // 启用 空格/Tab 高亮
-//       lineNumbers: true, // 启用行号
-//     },
-
-    /* 文章字数统计、阅读时间，设置为 false 则禁用 */
-     readingTime: true,
 
     /**
       * markdown

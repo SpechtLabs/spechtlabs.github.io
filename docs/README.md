@@ -2,13 +2,12 @@
 pageLayout: home
 externalLinkIcon: false
 config:
-  -
-    type: hero
+  - type: hero
     full: true
     background: tint-plate
     hero:
       name: Specht Labs
-      tagline: Code. Ship. Scale.
+      tagline: 
       text: SpechtLabs is dedicated to building robust, scalable, and high-performance software. With expertise in both development and operations, we focus on creating tools and infrastructure that power distributed systems, automation, and developer productivity.
       actions:
         - 

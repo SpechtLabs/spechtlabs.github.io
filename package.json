@@ -25,6 +25,7 @@
     "vuepress-theme-plume": "1.0.0-rc.136"
   },
   "dependencies": {
+    "@vuepress/plugin-register-components": "^1.9.10",
     "mermaid": "^11.5.0"
   }
 }

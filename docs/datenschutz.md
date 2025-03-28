@@ -1,7 +1,7 @@
 ---
 title: datenschutz
 createTime: 2025/03/23 14:04:27
-permalink: /article/ozrc8xt1/
+permalink: /datenschutz/
 ---
 # Datenschutzerklärung
 
