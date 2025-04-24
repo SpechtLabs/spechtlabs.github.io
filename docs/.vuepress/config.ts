@@ -56,6 +56,7 @@ export default defineUserConfig({
       */
     markdown: {
       collapse: true,
+      timeline: true,
       //   abbr: true,         // 启用 abbr 语法  *[label]: content
       //   annotation: true,   // 启用 annotation 语法  [+label]: content
       //   pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
