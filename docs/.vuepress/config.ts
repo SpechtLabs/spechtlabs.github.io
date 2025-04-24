@@ -11,7 +11,7 @@ export default defineUserConfig({
   description: 'SpechtLabs is dedicated to building robust, scalable, and high-performance software.',
 
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/specht.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/images/specht.png' }],
   ],
 
   bundler: viteBundler(),
@@ -35,19 +35,14 @@ export default defineUserConfig({
     contributors: false,
     // changelog: false,
 
-    /**
-     * 博客
-     * @see https://theme-plume.vuejs.press/config/basic/#blog
-     */
-    // blog: false, // 禁用博客
-    // blog: {
-    //   postList: true, // 是否启用文章列表页
-    //   tags: true, // 是否启用标签页
-    //   archives: true, // 是否启用归档页
-    //   categories: true, // 是否启用分类页
-    //   postCover: 'right', // 文章封面位置
-    //   pagination: 15, // 每页显示文章数量
-    // },
+    blog: {
+      postList: true,
+      tags: false,
+      archives: false,
+      categories: false,
+      postCover: 'right',
+      pagination: 15,
+    },
 
     /* 博客文章页面链接前缀 */
     article: '/article/',
@@ -60,6 +55,7 @@ export default defineUserConfig({
       * @see https://theme-plume.vuejs.press/config/markdown/
       */
     markdown: {
+      collapse: true,
       //   abbr: true,         // 启用 abbr 语法  *[label]: content
       //   annotation: true,   // 启用 annotation 语法  [+label]: content
       //   pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
