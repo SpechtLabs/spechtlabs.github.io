@@ -1,9 +1,8 @@
 ---
-title: datenschutz
+title: Datenschutzerklärung
 createTime: 2025/03/23 14:04:27
 permalink: /datenschutz/
 ---
-# Datenschutzerklärung
 
 Personenbezogene Daten (nachfolgend zumeist nur „Daten“ genannt) werden von uns nur im Rahmen der Erforderlichkeit sowie zum Zwecke der Bereitstellung eines funktionsfähigen und nutzerfreundlichen Internetauftritts, inklusive seiner Inhalte und der dort angebotenen Leistungen, verarbeitet.
 
@@ -29,8 +28,7 @@ Elbgaustraße 73B
 
 Deutschland
 
-E-Mail: datenschutz@specht-labs.de
-
+E-Mail: <datenschutz@specht-labs.de>
 
 ## II. Rechte der Nutzer und Betroffenen
 
@@ -71,9 +69,9 @@ Durch die bei Aufruf unseres Internetauftritts hergestellte Verbindung zu Google
 
 Google bietet unter
 
-https://adssettings.google.com/authenticated
+<https://adssettings.google.com/authenticated>
 
-https://policies.google.com/privacy
+<https://policies.google.com/privacy>
 
 weitere Informationen an und zwar insbesondere zu den Möglichkeiten der Unterbindung der Datennutzung.
 
@@ -91,7 +89,7 @@ Durch die bei Aufruf unseres Internetauftritts hergestellte Verbindung zum Serve
 
 FontAwesome bietet unter
 
-https://fontawesome.com/privacy
+<https://fontawesome.com/privacy>
 
 weitere Informationen an und zwar insbesondere zu den Möglichkeiten der Unterbindung der Datennutzung.
 
@@ -113,7 +111,7 @@ Zum Zwecke der Funktionalität sowie zur Analyse des Nutzungsverhaltens speicher
 
 Weitergehende Informationen über die Erhebung und Nutzung von Daten sowie Ihre diesbezüglichen Rechte und Schutzmöglichkeiten hält Google in den unter
 
-https://policies.google.com/privacy
+<https://policies.google.com/privacy>
 
 abrufbaren Datenschutzhinweisen bereit.
 
@@ -145,10 +143,9 @@ Sofern Sie mit dieser Verarbeitung nicht einverstanden sind, haben Sie die Mögl
 
 CloudFlare bietet unter
 
-https://www.cloudflare.com/privacypolicy/
+<https://www.cloudflare.com/privacypolicy/>
 
 weitere Informationen zur Erhebung und Nutzung der Daten sowie zu Ihren Rechten und Möglichkeiten zum Schutz Ihrer Privatsphäre an.
-
 
 > [Muster-Datenschutzerklärung][1] der [Anwaltskanzlei Weiß & Partner][2]
 

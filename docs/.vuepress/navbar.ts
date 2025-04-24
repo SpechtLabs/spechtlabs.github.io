@@ -26,6 +26,7 @@ async function fetchNavbarConfig() {
 
   return defineNavbarConfig([
     { text: 'Home', link: '/' },
+    { text: 'Blog', link: '/blog/', activeMatch: '/blog/', },
     { text: 'About Me', link: '/about/' },
     {
       text: 'Projects',

@@ -2,6 +2,7 @@
 title: About Me
 createTime: 2025/03/28 12:49:34
 permalink: /about/
+cover: /images/specht-labs-rounded.png
 ---
 
 
@@ -12,7 +13,7 @@ If it's complex, distributed, and needs to stay up — I'm into it.
 
 I specialize in building and maintaining large-scale distributed systems, driving reliability, and leading technical initiatives to improve platform resilience.
 
-<LinkCard title="Download CV" icon="pepicons-pencil:cv" href="/about/CV_Cedric-Kienzler_2025.pdf"/>
+<LinkCard title="Download CV" icon="pepicons-pencil:cv" href="/assets/CV_Cedric-Kienzler_2025.pdf"/>
 
 ---
 
@@ -30,8 +31,8 @@ I specialize in building and maintaining large-scale distributed systems, drivin
 I regularly help with infrastructure, planning, and logistics for events like the Chaos Communication Congress.
 During the pandemic, I helped build:
 
-- _jitsi.rocks_ - A collection of Jitsi Video Servers to stay connected
-- _Open Infrastructure_ - A collective of people building desperately needed infrastructure for education institutions to keep classes going
+- *jitsi.rocks* - A collection of Jitsi Video Servers to stay connected
+- *Open Infrastructure* - A collective of people building desperately needed infrastructure for education institutions to keep classes going
 - The Kubernetes stack powering the [rC3 - NOW HERE](https://rc3.world/2021/) virtual workd
 
 ---
@@ -71,10 +72,10 @@ I develop film at home and have a tiny darkroom with a 35mm enlarger.
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/c3di1)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logoColor=white)](https://www.linkedin.com/in/cekienzl)
 
-
 ::: tabs
 
 @tab Experience
+
 - Technical Leadership & Mentorship
 - Key Stakeholder Management
 - Staff Training
@@ -84,6 +85,7 @@ I develop film at home and have a tiny darkroom with a 35mm enlarger.
 - Infrastructure as Code
 
 @tab Interests
+
 - Reliability Engineering
 - Software Engineering
 - Cloud Computing & Cloud-Native Platforms
@@ -101,14 +103,13 @@ I develop film at home and have a tiny darkroom with a 35mm enlarger.
 - Public Speaking & Knowledge Sharing
 - Home Lab Experimentation (Kubernetes, IoT, LoRaWAN, ESP32)
 
-
 @tab Technologies
 
 - Container Orchestration
   - Kubernetes
   - Docker / Docker-Compose
 - Kubernetes
-  - GitOps with __ArgoCD__
+  - GitOps with **ArgoCD**
   - Cilium CNI
   - K3s
   - ClusterAPI

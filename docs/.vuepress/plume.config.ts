@@ -6,7 +6,7 @@ import { notes } from './notes'
  * @see https://theme-plume.vuejs.press/config/basic/
  */
 export default defineThemeConfig({
-  logo: '/specht.png',
+  logo: '/images/specht.png',
 
   appearance: true,  // Configure Dark Mode
 
@@ -22,7 +22,7 @@ export default defineThemeConfig({
   createTime: true,
 
   footer: {
-    message: '<a target="_self" href="/impressum">Impressum</a> - <a target="_self" href="/datenschutz">Datenschutz</a> - Powered by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a>',
+    message: '<a target="_self" href="/notes/impressum">Impressum</a> - <a target="_self" href="/notes/datenschutz">Datenschutz</a> - Powered by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a>',
     copyright: '&#169; 2025 Cedric Kienzler',
   },
 
@@ -30,12 +30,12 @@ export default defineThemeConfig({
    * @see https://theme-plume.vuejs.press/config/basic/#profile
    */
   profile: {
-    avatar: '/specht-labs-rounded.png',
+    avatar: '/images/specht-labs-rounded.png',
     name: 'Specht Labs',
     description: 'SpechtLabs is dedicated to building robust, scalable, and high-performance software.',
     // circle: true,
     location: 'Hamburg, Germany',
-//    organization: 'foobar',
+    //    organization: 'foobar',
   },
 
   navbar,
