@@ -14,6 +14,11 @@ config:
           text: Github →
           link: https://github.com/spechtlabs/
 
+        - icon: 'material-symbols:article-outline'
+          theme: alt
+          text: Blog →
+          link: /blog/
+
   - type: VPProjectsCustom
   - type: VPContributorsCustom
 ---
