@@ -89,7 +89,7 @@ jobs:
           path: ./dist
 
       - name: Upload to Static Pages
-        uses: SpechtLabs/StaticPages-Upload@main
+        uses: SpechtLabs/StaticPages-Upload@v1
         with:
           endpoint: https://staticpages.cedi.dev
           site-dir: dist/
