@@ -83,6 +83,6 @@ jobs:
       - name: Upload to StaticPages
         uses: SpechtLabs/StaticPages-Upload@main
         with:
-          endpoint: https://staticpages.cedi.dev/
+          endpoint: https://staticpages.cedi.dev
           site-dir: dist/
           verbose: true
