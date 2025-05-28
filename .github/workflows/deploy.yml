@@ -85,3 +85,4 @@ jobs:
         with:
           endpoint: https://staticpages.cedi.dev/
           site-dir: dist/
+          verbose: true
