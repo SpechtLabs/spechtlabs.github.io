@@ -2,10 +2,16 @@ name: Publish Website
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches: [main]
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -89,7 +95,7 @@ jobs:
           path: ./dist
 
       - name: Upload to Static Pages
-        uses: SpechtLabs/StaticPages-Upload@v1
+        uses: SpechtLabs/StaticPages-Upload@main
         with:
           endpoint: https://staticpages.cedi.dev
           site-dir: dist/
