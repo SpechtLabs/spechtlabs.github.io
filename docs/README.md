@@ -20,6 +20,8 @@ config:
           link: /blog/
 
   - type: VPProjectsCustom
+    org: SpechtLabs
   - type: VPContributorsCustom
+    repo: SpechtLabs/spechtlabs.github.io
 ---
 

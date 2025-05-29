@@ -26,7 +26,7 @@ export default defineUserConfig({
   theme: plumeTheme({
     // hostname: 'https://your_site_url',
 
-    docsRepo: 'https://github.com/spechtlbas/spechtlabs.github.io',
+    docsRepo: 'https://github.com/SpechtLabs/spechtlabs.github.io',
     docsDir: 'docs',
     docsBranch: 'main',
 

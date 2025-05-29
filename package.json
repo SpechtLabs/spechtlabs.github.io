@@ -3,8 +3,8 @@
   "type": "module",
   "version": "1.0.0",
   "description": "SpechtLabs is dedicated to building robust, scalable, and high-performance software.",
-  "author": "Cedric Kienzler <github@cedric-kienzler.de>",
-  "license": "MIT",
+  "author": "Cedric Kienzler <cedric@specht-labs.de>",
+  "license": "Apache-2.0",
   "engines": {
     "node": "^18.20.0 || >=20.0.0"
   },
