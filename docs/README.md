@@ -2,22 +2,24 @@
 pageLayout: home
 externalLinkIcon: false
 config:
-  - type: hero
+  - type: doc-hero
     full: true
     background: tint-plate
     hero:
       name: Specht Labs
-      text: SpechtLabs is dedicated to building robust, scalable, and high-performance software. With expertise in both development and operations, we focus on creating tools and infrastructure that power distributed systems, automation, and developer productivity.
+      # text: Infrastructure with intent
+      tagline: SpechtLabs is dedicated to building robust, scalable, and high-performance software. With expertise in both development and operations, we focus on creating tools and infrastructure that power distributed systems, automation, and developer productivity.
+      image: /images/specht-labs-rounded.png
       actions:
-        - icon: 'fa-github'
+        - icon: 'simple-icons:bookstack'
           theme: brand
-          text: Github →
-          link: https://github.com/spechtlabs/
-
-        - icon: 'material-symbols:article-outline'
-          theme: alt
           text: Blog →
           link: /blog/
+
+        - icon: 'simple-icons:github'
+          theme: alt
+          text: Github →
+          link: https://github.com/spechtlabs/
 
   - type: VPProjectsCustom
     org: SpechtLabs
