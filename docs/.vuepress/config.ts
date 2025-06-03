@@ -1,5 +1,5 @@
 import { viteBundler } from '@vuepress/bundler-vite';
-import registerComponentsPlugin from '@vuepress/plugin-register-components';
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
 import { path } from '@vuepress/utils';
 import { defineUserConfig } from 'vuepress';
 import { plumeTheme } from 'vuepress-theme-plume';
