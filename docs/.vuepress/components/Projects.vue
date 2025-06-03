@@ -1,5 +1,6 @@
 <template>
-  <h2>Projects</h2>
+  <h2 class="section_title">Projects</h2>
+  <p class="section_description">Built in public. Shared for everyone. Explore the repositories powering my experiments and tools.</p>
   <br/>
   <div>
     <div v-if="loading" class="loading">Loading projects...</div>
@@ -174,5 +175,23 @@ onMounted(fetchProjects)
 
 .link-text-icon {
   margin-left: 6px;
+}
+
+.section_title {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: color var(--vp-t-color);
+    color: var(--vp-c-text-1);
+}
+
+.section_description {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: color var(--vp-t-color);
+    color: var(--vp-c-text-1);
 }
 </style>
