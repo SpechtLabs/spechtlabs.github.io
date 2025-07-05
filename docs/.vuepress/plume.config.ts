@@ -12,7 +12,7 @@ export default defineThemeConfig({
 
   social: [
     { icon: 'github', link: 'https://github.com/spechtlabs' },
-    { icon: 'linkedin', link: 'https://linkedin.com/in/ckienzler' },
+    { icon: 'linkedin', link: 'https://linkedin.com/in/cedricspecht' },
   ],
   navbarSocialInclude: ['github'],
   aside: true,
@@ -23,7 +23,7 @@ export default defineThemeConfig({
 
   footer: {
     message: '<a target="_self" href="/notes/impressum">Impressum</a> - <a target="_self" href="/notes/datenschutz">Datenschutz</a> - Powered by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a>',
-    copyright: '&#169; 2025 Cedric Kienzler',
+    copyright: '&#169; 2025 Cedric Specht',
   },
 
   /**

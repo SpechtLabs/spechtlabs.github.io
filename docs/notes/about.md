@@ -21,7 +21,7 @@ I specialize in building and maintaining large-scale distributed systems, drivin
 </Card>
 </CardGrid>
 
-<LinkCard title="Download my CV" icon="pepicons-pencil:cv" href="/assets/CV_Cedric-Kienzler_2025.pdf"/>
+<LinkCard title="Download my CV" icon="pepicons-pencil:cv" href="/assets/CV_Cedric-Specht_2025.pdf"/>
 
 ## What I Do
 

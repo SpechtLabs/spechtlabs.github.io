@@ -6,7 +6,7 @@ permalink: /impressum/
 
 Angaben gemäß § 5 TMG
 
-Cedric Kienzler
+Cedric Specht
 
 Elbgaustraße 73B
 
@@ -20,7 +20,7 @@ E-Mail: <impressum@specht-labs.de>
 
 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
 
-Cedric Kienzler
+Cedric Specht
 
 Elbgaustraße 73B
 

@@ -20,7 +20,7 @@ III. Informationen zur Datenverarbeitung
 
 Verantwortlicher Anbieter dieses Internetauftritts im datenschutzrechtlichen Sinne ist:
 
-Cedric Kienzler
+Cedric Specht
 
 Elbgaustraße 73B
 
