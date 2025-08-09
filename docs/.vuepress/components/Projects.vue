@@ -36,6 +36,8 @@ interface Repo {
   homepage: string;
   description: string;
   topics: string[];
+  stargazers_count: number; // Add this field
+  created_at: string; // Add this field
 }
 
 const props = defineProps<{
@@ -66,14 +68,30 @@ async function fetchProjects() {
 
     const repos = await response.json();
 
+    // Add sorting logic here
     projects.value = repos
-      .filter((repo: any) => repo.homepage && repo.name.toLowerCase() !== mainRepoName.value)
+      .filter(
+        (repo: any) =>
+          repo.homepage && repo.name.toLowerCase() !== mainRepoName.value,
+      )
       .map((repo: any) => ({
         name: repo.name,
         homepage: repo.homepage,
         description: repo.description,
         topics: repo.topics || [],
-      }));
+        stargazers_count: repo.stargazers_count, // Map the field
+        created_at: repo.created_at, // Map the field
+      }))
+      .sort((a: Repo, b: Repo) => {
+        // Sort by stars descending
+        if (a.stargazers_count !== b.stargazers_count) {
+          return b.stargazers_count - a.stargazers_count;
+        }
+        // If stars are equal, sort by creation date descending
+        return (
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        );
+      });
   } catch (err: any) {
     error.value = err.message || "Unknown error";
   } finally {
