@@ -5,19 +5,12 @@
     "dockerfile": "Dockerfile",
     "context": "."
   },
-  "features": {
-    // Install Node.js, specifying a version that aligns with VuePress 2.x recommendations.
-    // For VuePress 1.x, you might target Node.js 14 or 16.
-    "ghcr.io/devcontainers/features/node:18": {
-      "version": "lts"
-    }
-  },
-  // Mount your .vscode directory so VS Code picks up settings and extensions
+  // Mount .vscode directory so VS Code picks up settings and extensions
   "mounts": [
     "source=${localWorkspaceFolder}/.vscode,target=/workspaces/${localWorkspaceFolderBasename}/.vscode,type=bind"
   ],
   "postCreateCommand": "npm install",
-  "postAttachCommand": "npm run docs:dev", // Or `npm run dev` if that's your script
+  "postAttachCommand": "npm run dev",
   "portsAttributes": {
     "8080": {
       "label": "VuePress Dev Server",

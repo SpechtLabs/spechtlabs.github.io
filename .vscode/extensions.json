@@ -8,6 +8,8 @@
     "EditorConfig.EditorConfig", // Maintain consistent coding styles
     "csstools.postcss", // For PostCSS support
     "formulahendry.auto-rename-tag", // Auto-rename paired HTML/Vue tags
-    "aaron-bond.better-comments" // For improved comment readability
+    "aaron-bond.better-comments", // For improved comment readability
+    "ms-azuretools.vscode-containers",
+    "davidanson.vscode-markdownlint"
   ]
 }
