@@ -1,23 +1,21 @@
 <template>
   <h2 class="section_title">Projects</h2>
-  <p class="section_description">Built in public. Shared for everyone. Explore the repositories powering my experiments and tools.</p>
-  <br/>
+  <p class="section_description">Built in public. Shared for everyone. Explore the repositories powering my experiments
+    and tools.</p>
+  <br />
   <div>
     <div v-if="loading" class="loading">Loading projects...</div>
     <div v-else-if="error" class="error">Error: {{ error }}</div>
-    <div v-else class="projects-grid">
-      <a
-        v-for="project in projects"
-        :key="project.name"
-        class="vp-home-feature"
-        :href="project.homepage"
-        target="_blank"
-        rel="noopener noreferrer">
+    <div v-else :style="projectsGridStyles" class="projects-grid">
+      <a v-for="project in projects" :key="project.name" class="vp-home-feature" :href="project.homepage"
+        target="_blank" rel="noopener noreferrer">
         <article class="box">
           <h2 class="title" v-html="project.name" />
           <p class="details" v-html="project.description" />
           <div class="tags">
-            <span v-for="tag in project.topics" :key="tag" class="tag">{{ tag }}</span>
+            <span v-for="tag in project.topics" :key="tag" class="tag">{{
+              tag
+              }}</span>
           </div>
           <div class="link-text">
             <p class="link-text-value">
@@ -31,39 +29,42 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from "vue";
 
 interface Repo {
-  name: string
-  homepage: string
-  description: string
-  topics: string[]
+  name: string;
+  homepage: string;
+  description: string;
+  topics: string[];
 }
 
 const props = defineProps<{
-  org: string
-}>()
+  org: string;
+}>();
 
-const projects = ref<Repo[]>([])
-const loading = ref(true)
-const error = ref('')
+const projects = ref<Repo[]>([]);
+const loading = ref(true);
+const error = ref("");
 
-const mainRepoName = computed(() => `${props.org.toLowerCase()}.github.io`)
+const mainRepoName = computed(() => `${props.org.toLowerCase()}.github.io`);
 
 async function fetchProjects() {
   try {
-    const response = await fetch(`https://api.github.com/orgs/${props.org}/repos`, {
-      headers: {
-        Accept: 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28',
+    const response = await fetch(
+      `https://api.github.com/orgs/${props.org}/repos`,
+      {
+        headers: {
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
       },
-    })
+    );
 
     if (!response.ok) {
-      throw new Error('Failed to fetch projects')
+      throw new Error("Failed to fetch projects");
     }
 
-    const repos = await response.json()
+    const repos = await response.json();
 
     projects.value = repos
       .filter((repo: any) => repo.homepage && repo.name.toLowerCase() !== mainRepoName.value)
@@ -72,22 +73,62 @@ async function fetchProjects() {
         homepage: repo.homepage,
         description: repo.description,
         topics: repo.topics || [],
-      }))
+      }));
   } catch (err: any) {
-    error.value = err.message || 'Unknown error'
+    error.value = err.message || "Unknown error";
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 }
 
-onMounted(fetchProjects)
+onMounted(fetchProjects);
+
+// --- New Logic for Grid Layout ---
+const projectsGridStyles = computed(() => {
+  const projectCount = projects.value.length;
+  let numColumns;
+
+  if (projectCount === 0) {
+    numColumns = 1; // No projects, perhaps just a single column for emptiness
+  } else if (projectCount === 1) {
+    numColumns = 1;
+  } else if (projectCount === 2) {
+    numColumns = 2;
+  } else if (projectCount === 3) {
+    numColumns = 3;
+  } else if (projectCount === 4) {
+    numColumns = 2; // Specific for 2x2
+  } else {
+    // For projectCount > 4
+    if (projectCount % 4 === 0 || projectCount === 7) {
+      numColumns = 4;
+    } else if (projectCount % 3 === 0) {
+      numColumns = 3;
+    } else {
+      // Fallback for cases like 5, 10, 11 where 4 columns is desired
+      numColumns = 4;
+    }
+  }
+
+  return {
+    display: "grid",
+    gridTemplateColumns: `repeat(${numColumns}, 1fr)`,
+    gap: "20px",
+  };
+});
 </script>
 
 <style scoped>
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  /*
+  The grid properties (display, grid-template-columns, gap)
+  are now dynamically applied via v-bind:style.
+  You can remove the `grid-template-columns` and `gap` from here
+  if you want them fully controlled by the JS logic.
+  Keeping `display: grid;` here as a base is fine,
+  but since it's in the dynamic style, it's redundant.
+  Let's remove the redundant parts from here for clarity.
+  */
 }
 
 .loading,
@@ -178,20 +219,20 @@ onMounted(fetchProjects)
 }
 
 .section_title {
-    font-size: 28px;
-    font-weight: 900;
-    margin-bottom: 20px;
-    text-align: center;
-    transition: color var(--vp-t-color);
-    color: var(--vp-c-text-1);
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: color var(--vp-t-color);
+  color: var(--vp-c-text-1);
 }
 
 .section_description {
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 20px;
-    text-align: center;
-    transition: color var(--vp-t-color);
-    color: var(--vp-c-text-1);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: color var(--vp-t-color);
+  color: var(--vp-c-text-1);
 }
 </style>
