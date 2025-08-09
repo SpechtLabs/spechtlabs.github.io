@@ -1,0 +1,13 @@
+{
+  // Recommended VS Code extensions for VuePress development
+  "recommendations": [
+    "Vue.volar", // Vue 3 language support, essential for VuePress 2
+    "johnsoncodehk.vscode-typescript-vue-plugin", // TypeScript plugin for Vue
+    "dbaeumer.vscode-eslint", // For linting JavaScript/TypeScript
+    "esbenp.prettier-vscode", // For code formatting
+    "EditorConfig.EditorConfig", // Maintain consistent coding styles
+    "csstools.postcss", // For PostCSS support
+    "formulahendry.auto-rename-tag", // Auto-rename paired HTML/Vue tags
+    "aaron-bond.better-comments" // For improved comment readability
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "install dependencies",
+      "type": "shell",
+      "command": "npm install", // Or `pnpm install` or `yarn install`
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "Install project dependencies"
+    },
+    {
+      "label": "start dev server",
+      "type": "shell",
+      "command": "npm run docs:dev", // Or `npm run dev`
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".*",
+              "file": 0,
+              "location": 1,
+              "message": 2
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Serving Vite / VuePress development server.*", // Adjust based on actual server start message
+            "endsPattern": ".*(server running|listening on).*" // Adjust based on actual server end message
+          }
+        }
+      ],
+      "group": "build",
+      "detail": "Starts the VuePress development server"
+    },
+    {
+      "label": "build for production",
+      "type": "shell",
+      "command": "npm run docs:build", // Or `npm run build`
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Builds the VuePress site for production"
+    },
+    {
+      "label": "lint",
+      "type": "shell",
+      "command": "npm run lint", // Assuming you have a `lint` script in package.json
+      "group": "test",
+      "problemMatcher": ["$eslint-stylish"],
+      "detail": "Runs ESLint checks on the project"
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "npm test", // Assuming you have a `test` script in package.json
+      "group": "test",
+      "problemMatcher": [],
+      "detail": "Runs project tests"
+    }
+  ]
+}
