@@ -7,61 +7,66 @@ cover: /images/specht-labs-rounded.png
 
 ## Hi, I'm Cedric
 
-but most people know me as *cedi*
+Most people know me as **cedi** — I'm a **Staff Site Reliability Engineer and Technical Lead** at [Celonis](https://www.celonis.com), where I focus on building resilient distributed systems that scale.
 
+<!-- markdownlint-disable MD033 -->
 <CardGrid>
 <ImageCard image="https://avatars.githubusercontent.com/u/1952599?v=4" />
 <Card>
 
-I'm a **Senior Site Reliability Engineering and Tech Lead** at [Microsoft Azure](https://github.com/microsoft), working on **distributed systems, chaos engineering, and platform resilience** at scale.
-If it's complex, distributed, and needs to stay up — I'm into it.
+I specialize in building and maintaining **hyperscale distributed systems** that serve hundreds of millions of users, with deep expertise in reliability engineering, observability, and resilience testing. My passion lies in making systems more reliable, teams more effective, and turning incidents into learning opportunities.
 
-I specialize in building and maintaining large-scale distributed systems, driving reliability, and leading technical initiatives to improve platform resilience.
+With **13 years** of experience in Software Engineering and Site Reliability Engineering, I've designed and operated **distributed systems at global scale** (across millions of servers), led critical infrastructure migrations for major cloud platforms, and built reliability practices that have become organizational standards at companies like Microsoft Azure.
 
 </Card>
 </CardGrid>
 
-<LinkCard title="Download my CV" icon="pepicons-pencil:cv" href="/assets/CV_Cedric-Specht_2025.pdf"/>
+<LinkCard title="Download my CV" icon="pepicons-pencil:cv" href="/assets/Cedric_Specht.pdf"/>
+<!-- markdownlint-enable MD033 -->
 
 ## What I Do
 
-- Building reliable, large-scale systems with a focus on **resilience, SLOs, and automation**
-- Leading teams and setting technical direction in high-stakes, high-scale environments
-- Designing chaos experiments, improving release workflows, and modernizing infrastructure
-- Evangelizing good SRE practices through talks, docs, and community work
+### Technical Leadership & Systems Design
 
-## Community & Chaos
+- Build and maintain **hyperscale distributed systems** serving hundreds of millions of users with focus on **resilience, SLOs, and automation**
+- Lead cross-functional teams and set technical direction in high-stakes, mission-critical environments
+- Design and implement **reliability engineering practices** including chaos engineering, observability, and automation across enterprise infrastructure
 
-I regularly help with infrastructure, planning, and logistics for events like the Chaos Communication Congress.
-During the pandemic, I helped build:
+### Community & Advocacy
 
-- *jitsi.rocks* - A collection of Jitsi Video Servers to stay connected
-- *Open Infrastructure* - A collective of people building desperately needed infrastructure for education institutions to keep classes going
-- The Kubernetes stack powering the [rC3 - NOW HERE](https://rc3.world/2021/) virtual workd
+- Evangelize SRE best practices through talks, documentation, and mentoring
+- Contribute to open-source projects and cloud-native ecosystem
+- Help organize infrastructure for events like Chaos Communication Congress
 
-## What I Tinker With
+### During the pandemic, I helped build
 
-- Home lab with **Raspberry Pi K3s cluster**, **CEPH storage**, and a **Stratum 1 NTP/PTP time server**
-- **Cluster API** managed cloud Kubernetes cluster running a full **Grafana LGTM Stack**
-- Kernel recompilation just for fun (and for weird hardware drivers)
-- Low-level **distributed systems** algorithms to explore gossip and consensus protocols
+- **jitsi.rocks** — Collection of Jitsi video servers to keep people connected
+- **Open Infrastructure** — Collective building critical infrastructure for education institutions
+- **rC3 virtual world** — Kubernetes stack powering the [rC3 - NOW HERE](https://rc3.world/2021/) virtual event
 
-## When Not Writing YAML
+## Personal Projects & Interests
 
-I’m also a hobbyist **analog photographer** with a small collection of 35mm and medium format cameras (Leica M6, Hasselblad 500 c/m, Canon A1).
-I develop film at home and have a tiny darkroom with a 35mm enlarger.
+### Home Lab & Tinkering
 
-## Things I Believe in
+- Raspberry Pi K3s cluster with CEPH storage and Stratum 1 NTP/PTP time server
+- Cluster API managed cloud Kubernetes running full Grafana LGTM stack
+- Kernel recompilation and low-level distributed systems exploration
 
-- Be excellent to each other 🤝
-- Focus on fundamentals > chasing hype
-- Alert on **symptoms**, not **vitals**
-- Incidents are opportunities to learn
+### Analog Photography
+
+When I'm not writing YAML, I'm a hobbyist **analog photographer** with a collection of 35mm and medium format cameras (Leica M6, Hasselblad 500 c/m, Canon A1). I develop film at home in my tiny darkroom with a 35mm enlarger.
+
+## Engineering Philosophy
+
+- **Be excellent to each other** 🤝
+- Focus on **fundamentals** over chasing hype
+- Alert on **symptoms**, not vitals
+- **Incidents are learning opportunities**
 - There is no single "root cause"
 - [How Complex Systems Fail](https://how.complexsystems.fail) is required reading
-- Your beloved system architecture exists mostly **in your head** and ~~behaves~~ fails differently than you'd expect. (See the [Above the line/below the line](https://snafucatchers.github.io/#2_3_The_above-the-line/below-the-line_framework) framework)
+- System architecture exists mostly **in your head** and fails differently than expected ([Above/Below the Line framework](https://snafucatchers.github.io/#2_3_The_above-the-line/below-the-line_framework))
 
-## Let’s Connect
+## Let's Connect
 
 [![GitHub Specht Labs](https://img.shields.io/badge/SpechtLabs-008080?style=for-the-badge&logo=github&logoColor=white)](https://github.com/specht-labs)
 [![Mastodon](https://img.shields.io/badge/Mastodon-6364FF?style=for-the-badge&logo=mastodon&logoColor=white)](http://hachyderm.io/@cedi)
@@ -70,153 +75,201 @@ I develop film at home and have a tiny darkroom with a 35mm enlarger.
 
 ## Experiences
 
-::: timeline
+:::: timeline
+
+- Staff Site Reliability Engineer - Celonis
+  time=10/2025 type=important card=true
+
+- Lead Site Reliability Engineer - Databricks (neon.tech)
+  time=06/2025 to 09/2025 type=tip
+
+  Joined the neon.tech team just days before the acquisition by Databricks to lead a team of 7 engineers with a diverse skillset across reliability and infrastructure engineering during the post-acquisition integration of Neon into Databricks. Driving organisational change, technical migration, and strategic alignment with Databricks' mature platform ecosystem. Representing operational and infrastructure needs in cross-functional leadership forums to ensure stability, maintainability, and clear team purpose during the transition.
+
+  ::: collapse
+  - Details
+    - **Designing and leading the organisational split** of the former Neon SRE/Infra team into two focused teams (Infrastructure & Production Engineering), defining roles, responsibilities, and ownership boundaries for improved execution and clarity within the new Databricks organisation.
+    - **Conducting regular 1:1s** to gather team preferences and concerns, feeding into a team charter and structure aligned with individual growth paths and company needs.
+    - **Authoring a detailed integration plan** and design documents covering migration of observability, GitHub infrastructure, and ZTNA access to existing Databricks solutions, ensuring a successful integration into Databricks.
+    - **Creation, maintenance and prioritisation** of an infrastructure tech debt backlog to ensure focused improvements during the migration phase and beyond.
+  :::
 
 - Senior Site Reliability Engineer / Technical Lead - Microsoft Azure
-  time=02/2022 to 05/2025
+  time=02/2022 to 05/2025 type=tip
 
-  Technical Lead in Azure’s Safe Change infrastructure SRE Team, responsible for chaos engineering, resiliency validation, and release infrastructure Harmonisation: Led the modernisation of Azure's release infrastructure, migrating 60+ repositories and 600+ pipelines, increasing deployment reliability and speed across multiple critical customer-facing services including, among others, Azure Cosmos DB, Log Analytics, Web Apps & Function Apps.
+  Technical Lead in Azure's Safe Change infrastructure SRE Team, responsible for chaos engineering, resiliency validation, and release infrastructure Harmonisation: Led the modernisation of Azure's release infrastructure, migrating 60+ repositories and 600+ pipelines, increasing deployment reliability and speed across multiple critical customer-facing services including, among others, Azure Cosmos DB, Log Analytics, Web Apps & Function Apps.
 
-  - **Platorm Engineering & DevOps Expertise:** Developed Platform tooling improvements to streamline engineering workflows and improve developer experience and led shift-left initiatives, integrating early validation mechanisms to catch issues earlier in the development lifecycle.
-  - **Chaos Engineering & Resilience Validation:** Designed and implemented Chaos Engineering experiments to validate system failure hypotheses covering 80% of high-impact critical customer scenarios and improve resilience strategies and built synthetic monitoring and business validation testing to proactively identify and mitigate reliability risks.
-  - **Organised multiple internal learning sessions**, developing a 9-part self-guided onboarding tutorial as part of the SRE Academy, enabling new engineers to onboard 75% faster to the new release system.
-  - **Leadership and Team Management:** Technical lead & Scrum Master for my immediate team of 5 engineers, responsible for setting technical direction, mentoring, and defining strategies and goals for the team as well as the broader department, serving as the technical lead for a newly formed team within the Safe Change Infrastructure SRE organisation, and supporting to multiple program managers and teams from across three other SRE organisations in bootstrapping new SRE engagements.
-  - **Cross-Org Collaboration and Stakeholder Engagement:** Partnered with 10+ service teams across Azure to help them migrate to the new release system, contributing high-quality pull requests to their repositories as best-practice examples driving down change related outages by 20%.
-  - **SRE Best Practices an Knowledge Sharing:** Core Contributor & Commimee Member for the Azure SRE Playbook, authoring a new SRE patterns with 3 sub-patterns and overseeing the review and integration of 3 additional major patterns.
-  - **Technical Evangelism & Internal Training:** Speaker at Azure SRE Tech Talks, delivering sessions on reliability,
-deployment strategies, and Platform engineering.
-  - **Maintained and expanded the Azure SRE Wiki**, working across all SRE organisations to standardise and
-document operational excellence.
-  - **Recognition & Awards:** Azure Reliability Quality Star – Leadership Excellence Award for sustained high-
-quality contributions to Azure’s engineering culture and reliability improvements
+  ::: collapse
+  - Details
+    - **Platorm Engineering & DevOps Expertise:** Developed Platform tooling improvements to streamline engineering workflows and improve developer experience and led shift-left initiatives, integrating early validation mechanisms to catch issues earlier in the development lifecycle.
+    - **Chaos Engineering & Resilience Validation:** Designed and implemented Chaos Engineering experiments to validate system failure hypotheses covering 80% of high-impact critical customer scenarios and improve resilience strategies and built synthetic monitoring and business validation testing to proactively identify and mitigate reliability risks.
+    - **Organised multiple internal learning sessions**, developing a 9-part self-guided onboarding tutorial as part of the SRE Academy, enabling new engineers to onboard 75% faster to the new release system.
+    - **Leadership and Team Management:** Technical lead & Scrum Master for my immediate team of 5 engineers, responsible for setting technical direction, mentoring, and defining strategies and goals for the team as well as the broader department, serving as the technical lead for a newly formed team within the Safe Change Infrastructure SRE organisation, and supporting to multiple program managers and teams from across three other SRE organisations in bootstrapping new SRE engagements.
+    - **Cross-Org Collaboration and Stakeholder Engagement:** Partnered with 10+ service teams across Azure to help them migrate to the new release system, contributing high-quality pull requests to their repositories as best-practice examples driving down change related outages by 20%.
+    - **SRE Best Practices an Knowledge Sharing:** Core Contributor & Commimee Member for the Azure SRE Playbook, authoring a new SRE patterns with 3 sub-patterns and overseeing the review and integration of 3 additional major patterns.
+    - **Technical Evangelism & Internal Training:** Speaker at Azure SRE Tech Talks, delivering sessions on reliability, deployment strategies, and Platform engineering.
+    - **Maintained and expanded the Azure SRE Wiki**, working across all SRE organisations to standardise and document operational excellence.
+    - **Recognition & Awards:** Azure Reliability Quality Star – Leadership Excellence Award for sustained high-quality contributions to Azure's engineering culture and reliability improvements
+  :::
 
 - Tech-lead Manager Kubernetes SRE - German Edge Cloud
-  time=07/2020 to 01/2022
+  time=07/2020 to 01/2022 type=tip
 
-  Built and led the Kubernetes SRE Team: Established and scaled a remote team from two to 6 highly skilled SREs, taking full ownership of the company’s Managed Kubernetes Platform, spread across 3 availability zones and hosting 50+ customer clusters. Ensured only high-quality changes made it into production by reviewing code, design documents, and architecture changes daily, implementing state of the art GitOps tooling and observability, resulting in a 75% reduction in change related outages over 12 months.
+  Built and led the Kubernetes SRE Team: Established and scaled a remote team from two to 6 highly skilled SREs, taking full ownership of the company's Managed Kubernetes Platform, spread across 3 availability zones and hosting 50+ customer clusters. Ensured only high-quality changes made it into production by reviewing code, design documents, and architecture changes daily, implementing state of the art GitOps tooling and observability, resulting in a 75% reduction in change related outages over 12 months.
 
-  - **Incident & Change Management:** Developed and implemented new incident, change, and problem management processes, improving reliability and operational eﬃciency, enabling an average 10 minute time-to-engage and reducing time-to-mitigation by several hours on average through more streamlined and eﬃcient incident management processes and standard operating procedures.
-  - **Cross-Functional Collaboration:** Worked closely with the Service Management team to improve incident response, change reviews, and operational excellence as well as the Infrastructure, OpenStack, and CEPH Storage teams, ensuring seamless integration and optimised performance across compute, storage, and networking layers resulting in 10% increased storage throughput and decrease in etcd commit latencies driving customer satisfaction.
-  - **Platform & Product Leadership:** Took on the Product and Platform Owner role, shielding the team from unnecessary business complexity while aligning priorities with company strategy and CTO directives.
-  - **Financial Oversight & Cost Optimisation:** Managed the budget for the Managed Kubernetes Service, including forecasting infrastructure costs and collaborating with accounting on financial planning.
-  - **Sales & Pricing Strategy:** Worked with Sales and Finance leadership to define a competitive pricing structure for the Kubernetes oﬀering.
-  - **Cloud-Native & Open Source Advocacy:** Fostered a culture of open-source collaboration, contributing improvements back to the cloud-native community and positioning the company’s oﬀerings within CNCF certification programs.
+  ::: collapse
+  - Details
+    - **Incident & Change Management:** Developed and implemented new incident, change, and problem management processes, improving reliability and operational eﬃciency, enabling an average 10 minute time-to-engage and reducing time-to-mitigation by several hours on average through more streamlined and eﬃcient incident management processes and standard operating procedures.
+    - **Cross-Functional Collaboration:** Worked closely with the Service Management team to improve incident response, change reviews, and operational excellence as well as the Infrastructure, OpenStack, and CEPH Storage teams, ensuring seamless integration and optimised performance across compute, storage, and networking layers resulting in 10% increased storage throughput and decrease in etcd commit latencies driving customer satisfaction.
+    - **Platform & Product Leadership:** Took on the Product and Platform Owner role, shielding the team from unnecessary business complexity while aligning priorities with company strategy and CTO directives.
+    - **Financial Oversight & Cost Optimisation:** Managed the budget for the Managed Kubernetes Service, including forecasting infrastructure costs and collaborating with accounting on financial planning.
+    - **Sales & Pricing Strategy:** Worked with Sales and Finance leadership to define a competitive pricing structure for the Kubernetes oﬀering.
+    - **Cloud-Native & Open Source Advocacy:** Fostered a culture of open-source collaboration, contributing improvements back to the cloud-native community and positioning the company's oﬀerings within CNCF certification programs.
+
+  :::
 
 - Site Reliability Engineer 2, SharePoint Online - Microsoft
-  time=01/2019 to 03/2020
+  time=01/2019 to 03/2020 type=tip
 
-  Running Live-Site operations for one of the largest M365 services with over 200 million monthly active users and over 1 exabyte of data, including incident response and management, rapidly diagnosing and resolving critical issues to maintain SharePoint Online’s 99,99% SLA.
+  Running Live-Site operations for one of the largest M365 services with over 200 million monthly active users and over 1 exabyte of data, including incident response and management, rapidly diagnosing and resolving critical issues to maintain SharePoint Online's 99,99% SLA.
 
-  - **Disaster Recovery & Infrastructure Modernisation:** Led an initiative to improve disaster recovery playbooks using a more resilient storage solution, ensuring recovery procedures remained accessible even during blackout scenarios.
-  - **Onboarding & Global Expansion:** Played a key role in onboarding and training a new SRE team in China, enabling 24/7 follow-the-sun operations.
-  - **Community & Knowledge Sharing:** Organised meet-ups for MicrosoK Ireland’s Open Source Club
+  ::: collapse
+  - Details
+
+    - **Disaster Recovery & Infrastructure Modernisation:** Led an initiative to improve disaster recovery playbooks using a more resilient storage solution, ensuring recovery procedures remained accessible even during blackout scenarios.
+    - **Onboarding & Global Expansion:** Played a key role in onboarding and training a new SRE team in China, enabling 24/7 follow-the-sun operations.
+    - **Community & Knowledge Sharing:** Organised meet-ups for MicrosoK Ireland's Open Source Club
+
+  :::
 
 - Software Engineer, Network Security - Sophos
-  time=01/2017 to 12/2018
+  time=01/2017 to 12/2018 type=tip
 
-  - **Network Security & Threat Detection:** Worked on the Synchronised Security Engine, significantly improving network threat detec;on rates compared to competing vendors.
-  - **IPSec & Network Protocol Implementation:** Worked on the implementation of IPsec IKEv2 in the Linux Kernel for the Firewall Appliance
-  - Scalability & Load Testing: Implemented extensive firewall load testing using the Ixia BreakingPoint plaAorm, ensuring performance under high traﬃc loads. Developed custom load-testing frameworks with Python Mininet SDN, simulating concurrent user traﬃc.
-  - **Testing & Release Acceleration:** Expanded the integration test suite for firewall products, leading to faster and more reliable release cycles.
+  ::: collapse
+  - Details
+    - **Network Security & Threat Detection:** Worked on the Synchronised Security Engine, significantly improving network threat detec;on rates compared to competing vendors.
+    - **IPSec & Network Protocol Implementation:** Worked on the implementation of IPsec IKEv2 in the Linux Kernel for the Firewall Appliance
+    - **Scalability & Load Testing:** Implemented extensive firewall load testing using the Ixia BreakingPoint plaAorm, ensuring performance under high traﬃc loads. Developed custom load-testing frameworks with Python Mininet SDN, simulating concurrent user traﬃc.
+    - **Testing & Release Acceleration:** Expanded the integration test suite for firewall products, leading to faster and more reliable release cycles.
+
+  :::
 
 - Software Engineer - MARKANT Handels and Service GmbH
-  time=08/2015 to 12/2016
+  time=08/2015 to 12/2016 type=tip
 
-  - **Infrastructure Modernisation:** Led a department-wide initiative migrating from CVS to Git, upgrading IDE versions, and implementing a CI/CD pipeline for improved development workflows, increasing deployment velocity from once a week to multiple times a day.
-  - **Operational Support Tooling:** Built custom tools to assist operations teams, enhancing incident response times in highly time-sensitive trading systems.
-  - **Mentorship & Training:** Trained apprentices and junior engineers in soKware architecture, clean code principles, and design pamerns.
+  ::: collapse
+  - Details
+    - **Infrastructure Modernisation:** Led a department-wide initiative migrating from CVS to Git, upgrading IDE versions, and implementing a CI/CD pipeline for improved development workflows, increasing deployment velocity from once a week to multiple times a day.
+    - **Operational Support Tooling:** Built custom tools to assist operations teams, enhancing incident response times in highly time-sensitive trading systems.
+    - **Mentorship & Training:** Trained apprentices and junior engineers in soKware architecture, clean code principles, and design pamerns.
+
+  :::
 
 - Junior Software Engineer, Streit Datentechnik GmbH
-  time=09/2012 to 07/2015
+  time=09/2012 to 07/2015 type=tip
 
-  - **Software Development:** Learned MS Visual C++, C# .NET, MS T-SQL, MFC, and the Win32 API, broadening problem-solving capabilities across multiple technologies.
-  - **Reverse Engineering & Analysis:** Developed a disassembler to read dependencies from Windows-PE and C# executables for debugging and system analysis.
+  ::: collapse
+  - Details
+    - **Software Development:** Learned MS Visual C++, C# .NET, MS T-SQL, MFC, and the Win32 API, broadening problem-solving capabilities across multiple technologies.
+    - **Reverse Engineering & Analysis:** Developed a disassembler to read dependencies from Windows-PE and C# executables for debugging and system analysis.
 
-:::
+  :::
+
+::::
 
 ::: tabs
 
-@tab Experience
+@tab Core Skills
 
-- Technical Leadership & Mentorship
-- Key Stakeholder Management
-- Staff Training
-- Distributed Systems & Low-Level Systems Programming
-- Chaos Engineering & Resilience Testing
-- CI/CD & Deployment Orchestration
-- Infrastructure as Code
+### Leadership & Management
 
-@tab Interests
+- Technical Leadership & Strategic Direction
+- Cross-Functional Team Management
+- Stakeholder Engagement & Communication
+- Mentorship & Staff Development
+- Incident Response Leadership
 
-- Reliability Engineering
-- Software Engineering
-- Cloud Computing & Cloud-Native Platforms
-- Automation & Infrastructure as Code
-- Distributed Systems Architecture
-- Site Reliability Engineering (SRE)
-- Chaos Engineering & Resilience Testing
-- Kubernetes & Container Orchestration
-- Observability & Monitoring (Metrics, Logging, Tracing)
+### Site Reliability Engineering
+
+- **Hyperscale distributed systems** architecture & design (serving 200M+ users)
+- **Chaos engineering & resilience testing** at enterprise scale
+- **Service Level Objectives (SLOs) & Error Budgets** with statistical process control
+- **Advanced observability & monitoring** strategy for mission-critical systems
+- **Platform engineering** & developer experience optimization
+
+### Software Engineering
+
 - Low-Level Systems Programming
-- Networking & Security
-- DevOps & CI/CD Pipelines
-- Technical Leadership & Mentorship
-- Open Source Contributions & Cloud-Native Advocacy
-- Public Speaking & Knowledge Sharing
-- Home Lab Experimentation (Kubernetes, IoT, LoRaWAN, ESP32)
+- API Design & Microservices Architecture
+- Performance Optimization & Debugging
+- Code Review & Engineering Standards
 
 @tab Technologies
 
-- Container Orchestration
-  - Kubernetes
-  - Docker / Docker-Compose
-- Kubernetes
-  - GitOps with **ArgoCD**
-  - Cilium CNI
-  - K3s
-  - ClusterAPI
-- Observability
-  - Grafana LGTM Stack
-    - Loki (Self-hosted in K8s)
-    - Grafana Dashboard (Self-hosted in K8s)
-    - Tempo (Self-hosted in K8s)
-    - Mimir (Self-hosted in K8s)
-  - Service Level Indicators & Service Level Objectives
-- CI/CD
-  - GitLab CI/CD
-  - GitHub Actions
-- Project Management Tools
-  - JIRA
-  - Confluence
-  - Azure DevOps
-  - Azure Wiki
-  - DocFX
-  - Hugo
-  - VuePress
-- Chaos Engineering
-  - Chaos Mesh (for K8s)
-  - Azure Chaos Studio (for Azure infrastructure)
-- Infrastructure as Code
-  - Terraform
-  - Azure Resource Manager (ARM)
-  - Bicep
-  - Ansible
-- Programming Languages
-  - Go
-  - Rust
-  - C++
-  - Python
-  - TypeScript
-  - BASH
-- Networking
-  - Hardware
-    - Arista EOS
-    - HPE / Aruba
-  - Protocols
-    - IPsec IKEv2
-    - BGP
-    - Wireguard
-  - Technologies
-    - Tailscale
-    - mininet
+### Container & Orchestration
+
+- **Kubernetes** (K3s, ClusterAPI, Production Scale)
+- **Docker** & Docker-Compose
+- **ArgoCD** & GitOps Workflows
+- **Cilium CNI** & Service Mesh
+
+### Observability & Monitoring
+
+- **Grafana LGTM Stack** (Loki, Grafana, Tempo, Mimir)
+- **Prometheus** & Custom Metrics
+- **Service Level Indicators** & SLO Management
+- **Distributed Tracing** & Performance Analytics
+
+### Infrastructure & Automation
+
+- **Terraform** & Infrastructure as Code
+- **Ansible** & Configuration Management
+- **Azure Resource Manager** (ARM) & Bicep
+- **CI/CD Pipelines** (GitHub Actions, GitLab CI/CD)
+
+### Programming Languages
+
+- **Go** (Primary for system tools & APIs)
+- **Rust** (Performance-critical applications)
+- **Python** (Automation & data processing)
+- **C++** (Low-level systems & drivers)
+- **TypeScript** & **Bash** scripting
+
+### Networking & Security
+
+- **IPsec IKEv2** & VPN Technologies
+- **BGP** & Network Protocols
+- **Wireguard** & **Tailscale**
+- **Arista EOS** & **HPE/Aruba** Hardware
+
+@tab Specializations
+
+### Chaos Engineering
+
+- **Led chaos engineering implementation** across millions of servers globally at Microsoft Azure
+- **Statistical process control** for automated chaos experiment evaluation in CI/CD pipelines
+- **Azure Chaos Studio** and **Chaos Mesh** for cloud and Kubernetes infrastructure
+- **Enterprise-scale resilience testing** with automated failure hypothesis validation
+- **Game day exercises** and comprehensive disaster recovery planning
+
+### Platform Engineering
+
+- Developer experience optimization
+- Internal tooling & automation platforms
+- Release engineering & deployment strategies
+- Migration planning & execution
+
+### Open Source & Community
+
+- **Cloud-Native Computing Foundation** (CNCF) ecosystem
+- Open source project contributions
+- Technical writing & documentation
+- Conference speaking & knowledge sharing
+
+### Specialized Interests
+
+- **Home Lab Experimentation** (K8s, IoT, LoRaWAN, ESP32)
+- **Analog Photography** & Darkroom Development
+- **Time Synchronization** (NTP/PTP Stratum 1 servers)
+- **Distributed Systems Research** & Algorithm Implementation
+
 :::
