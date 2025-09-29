@@ -7,14 +7,16 @@ cover: /images/specht-labs-rounded.png
 
 ## Hi, I'm Cedric
 
-Most people know me as **cedi** — I'm a **Staff Site Reliability Engineer and Technical Lead** at [Celonis](https://www.celonis.com), where I focus on building resilient distributed systems that scale.
+Most people know me as **cedi**.
+
+I'm a **Staff Site Reliability Engineer and Technical Lead** at [Celonis](https://www.celonis.com), where I focus on building resilient distributed systems that scale.
 
 <!-- markdownlint-disable MD033 -->
 <CardGrid>
 <ImageCard image="https://avatars.githubusercontent.com/u/1952599?v=4" />
 <Card>
 
-I specialize in building and maintaining **hyperscale distributed systems** that serve hundreds of millions of users, with deep expertise in reliability engineering, observability, and resilience testing. My passion lies in making systems more reliable, teams more effective, and turning incidents into learning opportunities.
+I specialize in building and maintaining **large scale distributed systems** that serve hundreds of millions of users, with deep expertise in chaos engineering, observability, and resilience testing. My passion lies in making systems more reliable, teams more effective, and turning incidents into learning opportunities.
 
 With **13 years** of experience in Software Engineering and Site Reliability Engineering, I've designed and operated **distributed systems at global scale** (across millions of servers), led critical infrastructure migrations for major cloud platforms, and built reliability practices that have become organizational standards at companies like Microsoft Azure.
 
@@ -34,23 +36,29 @@ With **13 years** of experience in Software Engineering and Site Reliability Eng
 
 ### Community & Advocacy
 
-- Evangelize SRE best practices through talks, documentation, and mentoring
-- Contribute to open-source projects and cloud-native ecosystem
-- Help organize infrastructure for events like Chaos Communication Congress
+#### Conference Speaking
 
-### During the pandemic, I helped build
+Regular speaker at technology conferences on SRE, observability, and Kubernetes topics. Recent talks include:
 
-- **jitsi.rocks** — Collection of Jitsi video servers to keep people connected
-- **Open Infrastructure** — Collective building critical infrastructure for education institutions
-- **rC3 virtual world** — Kubernetes stack powering the [rC3 - NOW HERE](https://rc3.world/2021/) virtual event
+- **[Site Reliability Engineering Explained](https://media.ccc.de/v/gpn21-48-site-reliability-engineering-explained-an-exploration-of-devops-platform-engineering-and-sre)** - Exploring DevOps vs Platform Engineering vs SRE
+- **[Modern Observability with LGTM Stack](https://media.ccc.de/v/gpn21-47-modern-observability-scalable-observability-with-the-lgtm-stack-harnessing-the-power-of-loki-grafana-tempo-and-mimir)** - Scalable observability architecture
+- **[Understanding Alerting](https://media.ccc.de/v/gpn20-22-understanding-alerting-how-to-come-up-with-a-good-enough-alerting-strategy)** - Building effective alerting strategies
+
+#### Open Source & Community
+
+- Active contributor to **[SpechtLabs](https://github.com/specht-labs)**, **[Compute Blade Community](https://github.com/compute-blade-community)**, and **[SierraSoftworks](https://github.com/SierraSoftworks)** projects
+- Help organize infrastructure for events like **Chaos Communication Congress**
+- Regular technical conference speaker and community contributor
 
 ## Personal Projects & Interests
 
 ### Home Lab & Tinkering
 
-- Raspberry Pi K3s cluster with CEPH storage and Stratum 1 NTP/PTP time server
-- Cluster API managed cloud Kubernetes running full Grafana LGTM stack
-- Kernel recompilation and low-level distributed systems exploration
+- **14 Raspberry Pi cluster** (6× Pi5, 4× Pi4, 4× CM4) running K3s
+- **CEPH distributed storage** for hands-on distributed systems experience
+- **Stratum 1 NTP/PTP time server** for precision timing
+- **Cluster API** managed cloud Kubernetes running full **Grafana LGTM stack**
+- **Advanced chaos engineering** experiments across the cluster
 
 ### Analog Photography
 
@@ -58,13 +66,24 @@ When I'm not writing YAML, I'm a hobbyist **analog photographer** with a collect
 
 ## Engineering Philosophy
 
-- **Be excellent to each other** 🤝
+::: tip Core Principle
+**Be excellent to each other** 🤝
+:::
+
+::: note Focus Areas
+
 - Focus on **fundamentals** over chasing hype
 - Alert on **symptoms**, not vitals
 - **Incidents are learning opportunities**
 - There is no single "root cause"
+:::
+
+::: details Essential Reading & Frameworks
+
 - [How Complex Systems Fail](https://how.complexsystems.fail) is required reading
-- System architecture exists mostly **in your head** and fails differently than expected ([Above/Below the Line framework](https://snafucatchers.github.io/#2_3_The_above-the-line/below-the-line_framework))
+- System architecture exists mostly **in your head** and fails differently than expected
+- Recommend the [Above/Below the Line framework](https://snafucatchers.github.io/#2_3_The_above-the-line/below-the-line_framework) for incident analysis
+:::
 
 ## Let's Connect
 

@@ -1,17 +1,18 @@
-import { viteBundler } from '@vuepress/bundler-vite';
-import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
-import { path } from '@vuepress/utils';
-import { defineUserConfig } from 'vuepress';
-import { plumeTheme } from 'vuepress-theme-plume';
+import { viteBundler } from "@vuepress/bundler-vite";
+import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
+import { path } from "@vuepress/utils";
+import { defineUserConfig } from "vuepress";
+import { plumeTheme } from "vuepress-theme-plume";
 
 export default defineUserConfig({
-  base: '/',
-  lang: 'en-US',
-  title: 'Specht Labs',
-  description: 'SpechtLabs is dedicated to building robust, scalable, and high-performance software.',
+  base: "/",
+  lang: "en-US",
+  title: "Specht Labs",
+  description:
+    "SpechtLabs is dedicated to building robust, scalable, and high-performance software.",
 
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/images/specht.png' }],
+    ["link", { rel: "icon", type: "image/png", href: "/images/specht.png" }],
   ],
 
   bundler: viteBundler(),
@@ -19,16 +20,16 @@ export default defineUserConfig({
 
   plugins: [
     registerComponentsPlugin({
-      componentsDir: path.resolve(__dirname, './components'),
+      componentsDir: path.resolve(__dirname, "./components"),
     }),
   ],
 
   theme: plumeTheme({
     // hostname: 'https://your_site_url',
 
-    docsRepo: 'https://github.com/SpechtLabs/spechtlabs.github.io',
-    docsDir: 'docs',
-    docsBranch: 'main',
+    docsRepo: "https://github.com/SpechtLabs/spechtlabs.github.io",
+    docsDir: "docs",
+    docsBranch: "main",
 
     editLink: false,
     lastUpdated: false,
@@ -40,25 +41,25 @@ export default defineUserConfig({
       tags: false,
       archives: false,
       categories: false,
-      postCover: 'right',
+      postCover: "right",
       pagination: 15,
     },
 
     /* 博客文章页面链接前缀 */
-    article: '/article/',
+    article: "/article/",
 
-    cache: 'filesystem',
-    search: { provider: 'local' },
+    cache: "filesystem",
+    search: { provider: "local" },
 
     /**
-      * markdown
-      * @see https://theme-plume.vuejs.press/config/markdown/
-      */
+     * markdown
+     * @see https://theme-plume.vuejs.press/config/markdown/
+     */
     markdown: {
       collapse: true,
       timeline: true,
       //   abbr: true,         // 启用 abbr 语法  *[label]: content
-      //   annotation: true,   // 启用 annotation 语法  [+label]: content
+      annotation: true, // 启用 annotation 语法  [+label]: content
       //   pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
       //   caniuse: true,      // 启用 caniuse 语法  @[caniuse](feature_name)
       //   plot: true,         // 启用隐秘文本语法 !!xxxx!!
@@ -73,9 +74,10 @@ export default defineUserConfig({
       //   jsfiddle: true,     // 启用嵌入 jsfiddle 语法 @[jsfiddle](user/id)
       //   npmTo: true,        // 启用 npm-to 容器  ::: npm-to
       //   demo: true,         // 启用 demo 容器  ::: demo
-      repl: {             // 启用 代码演示容器
-        go: true,         // ::: go-repl
-        rust: true,       // ::: rust-repl
+      repl: {
+        // 启用 代码演示容器
+        go: true, // ::: go-repl
+        rust: true, // ::: rust-repl
         //     kotlin: true,     // ::: kotlin-repl
       },
       //   math: {             // 启用数学公式
@@ -83,13 +85,13 @@ export default defineUserConfig({
       //   },
       //   chartjs: true,      // 启用 chart.js
       //   echarts: true,      // 启用 ECharts
-      mermaid: true,      // 启用 mermaid
+      mermaid: true, // 启用 mermaid
       //   flowchart: true,    // 启用 flowchart
       image: {
-        figure: true,     // 启用 figure
-        lazyload: true,   // 启用图片懒加载
-        mark: true,       // 启用图片标记
-        size: true,       // 启用图片大小
+        figure: true, // 启用 figure
+        lazyload: true, // 启用图片懒加载
+        mark: true, // 启用图片标记
+        size: true, // 启用图片大小
       },
       //   include: true,      // 在 Markdown 文件中导入其他 markdown 文件内容
       //   imageSize: 'local', // 启用 自动填充 图片宽高属性，避免页面抖动
@@ -97,4 +99,4 @@ export default defineUserConfig({
 
     watermark: false,
   }),
-})
+});
