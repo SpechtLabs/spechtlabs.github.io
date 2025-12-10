@@ -1,6 +1,6 @@
 # Use the base image provided by the Node.js devcontainer feature
 # This Dockerfile is minimal as the heavy lifting is done by the feature.
-FROM mcr.microsoft.com/devcontainers/javascript-node:18
+FROM mcr.microsoft.com/devcontainers/javascript-node:24
 
 # [Optional] Install any additional system dependencies if needed by your project.
 # For example:
