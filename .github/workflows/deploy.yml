@@ -47,7 +47,7 @@ jobs:
         run: npm run build
 
       - name: Upload Artifact for Website
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: site
           path: docs/.vuepress/dist
@@ -62,7 +62,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Download Artifacts for Website
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: site
           path: ./dist
@@ -83,7 +83,7 @@ jobs:
 
     steps:
       - name: Download Artifacts for Website
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: site
           path: ./dist
