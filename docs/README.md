@@ -7,7 +7,7 @@ config:
     background: tint-plate
     hero:
       name: Specht Labs
-      # text: Infrastructure with intent
+      text: Infrastructure with intent
       tagline: SpechtLabs is dedicated to building robust, scalable, and high-performance software. With expertise in both development and operations, we focus on creating tools and infrastructure that power distributed systems, automation, and developer productivity.
       image: /images/specht-labs-rounded.png
       actions:
