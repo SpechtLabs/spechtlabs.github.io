@@ -30,11 +30,11 @@ And using devcontainers (using the `devcontainer.json` config) you can even conf
 
 And the nice thing: If you have the [`ms-vscode-remote.remote-containers`][1] extension installed and you open a folder in VScode that has a `.devcontainer` folder inside of it, and that folder contains a `devcontainer.json` and a `Dockerfile` VScode will ask you if you want to reopen VScode in the devcontainer:
 
-![devcontainer-reopen](images/devcontainer/devcontainer-reopen.png)
+![devcontainer-reopen](./images/devcontainer/devcontainer-reopen.png)
 
 If it doesn't prompt you, you can select it from the command palette:
 
-![devcontainer-reopen](images/devcontainer/reopen-command.png)
+![devcontainer-reopen](./images/devcontainer/reopen-command.png)
 
 You can give it a try right now. The [GitHub Repository][2] hosting this blog comes with a [devcontainer][3].
 

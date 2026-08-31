@@ -36,17 +36,28 @@ export default defineUserConfig({
     contributors: false,
     // changelog: false,
 
-    blog: {
-      postList: true,
-      tags: false,
-      archives: false,
-      categories: false,
-      postCover: "right",
-      pagination: 15,
-    },
-
-    /* 博客文章页面链接前缀 */
-    article: "/article/",
+    collections: [
+      {
+        type: "post",
+        dir: "blog",
+        title: "Blog",
+        link: "/blog/",
+        linkPrefix: "/article/",
+        postList: true,
+        tags: false,
+        archives: false,
+        categories: false,
+        postCover: "right",
+        pagination: 15,
+      },
+      {
+        type: "doc",
+        dir: "notes",
+        title: "Pages",
+        linkPrefix: "/",
+        sidebar: [],
+      },
+    ],
 
     cache: "filesystem",
     search: { provider: "local" },

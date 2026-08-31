@@ -1,0 +1,41 @@
+[tools]
+node = "24.18.0"
+bun = "1.3.14"
+
+[tasks.install]
+description = "Install dependencies from the frozen Bun lockfile"
+run = "bun install --frozen-lockfile"
+
+[tasks.update]
+description = "Update dependencies and refresh bun.lock"
+run = "bun update"
+
+[tasks.dev]
+description = "Start the VuePress development server"
+depends = ["install"]
+run = "bun run dev"
+
+[tasks."dev-clean"]
+description = "Start VuePress with clean caches"
+depends = ["install"]
+run = "bun run dev-clean"
+
+[tasks.build]
+description = "Build the production website"
+depends = ["install"]
+run = "bun run build"
+
+[tasks.preview]
+description = "Build and serve the production website locally"
+depends = ["build"]
+run = "bun run preview"
+
+[tasks."vp-update"]
+description = "Run the VuePress dependency updater"
+depends = ["install"]
+run = "bun run vp-update"
+
+[tasks.ci]
+description = "Verify the frozen dependencies and production build"
+depends = ["install"]
+run = "bun run build"

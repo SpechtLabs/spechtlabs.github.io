@@ -10,6 +10,8 @@
   "prHourlyLimit": 2,
   "prConcurrentLimit": 8,
   "rebaseWhen": "behind-base-branch",
+  "ignoreTests": false,
+  "platformAutomerge": false,
   "rangeStrategy": "bump",
   "semanticCommitType": "chore",
   "semanticCommitScope": "deps",
@@ -21,24 +23,9 @@
     "schedule": [
       "before 6am on monday"
     ],
-    "automerge": true
+    "automerge": true,
+    "automergeType": "pr"
   },
-  "customManagers": [
-    {
-      "customType": "regex",
-      "description": "Track the Go toolchain version pinned in .mise.toml.",
-      "managerFilePatterns": [
-        "/(^|/)\\.mise\\.toml$/"
-      ],
-      "matchStrings": [
-        "(?:^|\\n)go\\s*=\\s*\"(?<currentValue>\\d+\\.\\d+(?:\\.\\d+)?)\""
-      ],
-      "depNameTemplate": "go",
-      "packageNameTemplate": "go",
-      "datasourceTemplate": "golang-version",
-      "versioningTemplate": "semver"
-    }
-  ],
   "packageRules": [
     {
       "description": "Automerge digest, pin, patch, and minor updates once CI passes.",
@@ -50,8 +37,7 @@
         "minor"
       ],
       "automerge": true,
-      "automergeType": "pr",
-      "platformAutomerge": true
+      "automergeType": "pr"
     },
     {
       "description": "Keep major updates explicit.",
@@ -70,11 +56,10 @@
       "groupSlug": "github-actions",
       "automerge": true,
       "automergeType": "pr",
-      "platformAutomerge": true,
       "dependencyDashboardApproval": false
     },
     {
-      "description": "Do not manage npm as a separate mise tool; Node provides npm.",
+      "description": "Do not add npm as a separate tool; Bun manages packages and Node already includes npm.",
       "matchFileNames": [
         ".mise.toml"
       ],
@@ -84,37 +69,26 @@
       "enabled": false
     },
     {
-      "description": "Group Go module updates together.",
-      "matchManagers": [
-        "gomod"
-      ],
-      "groupName": "Go modules",
-      "groupSlug": "go-modules"
-    },
-    {
-      "description": "Update .mise.toml and go.mod Go versions together.",
-      "matchDatasources": [
-        "golang-version"
-      ],
-      "matchDepNames": [
-        "go"
-      ],
-      "groupName": "Go toolchain",
-      "groupSlug": "go-toolchain",
-      "rangeStrategy": "bump",
-      "automerge": true,
-      "automergeType": "pr",
-      "platformAutomerge": true,
-      "dependencyDashboardApproval": false
-    },
-    {
       "description": "Group docs site dependencies together.",
       "matchFileNames": [
-        "docs/package.json",
-        "docs/bun.lock"
+        "package.json",
+        "bun.lock"
       ],
-      "groupName": "docs dependencies",
-      "groupSlug": "docs-dependencies"
+      "groupName": "site dependencies",
+      "groupSlug": "site-dependencies"
+    },
+    {
+      "description": "Update the VuePress release set together.",
+      "matchPackageNames": [
+        "vuepress",
+        "vuepress-theme-plume",
+        "@mdit/**",
+        "@pengzhanbo/utils",
+        "@vuepress/**",
+        "@vuepress-plume/**"
+      ],
+      "groupName": "VuePress stack",
+      "groupSlug": "vuepress-stack"
     }
   ]
 }

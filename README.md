@@ -1,42 +1,38 @@
-# specht-labs
+# Specht Labs
 
-The Site is generated using [vuepress](https://vuepress.vuejs.org/) and [vuepress-theme-plume](https://github.com/pengzhanbo/vuepress-theme-plume)
+The site uses [VuePress](https://vuepress.vuejs.org/) and [vuepress-theme-plume](https://github.com/pengzhanbo/vuepress-theme-plume).
 
 ## Install
 
 ```sh
-npm i
+mise install
+mise run install
 ```
 
-## Usage
+## Run the site
 
 ```sh
-# start dev server
-npm run docs:dev
-# build for production
-npm run docs:build
-# preview production build in local
-npm run docs:preview
-# update vuepress and theme
-npm run vp-update
+# Start the development server
+mise run dev
+
+# Build for production
+mise run build
+
+# Preview the production build locally
+mise run preview
+
+# Run the frozen install and build used by CI
+mise run ci
+
+# Update VuePress and its theme
+mise run vp-update
 ```
 
-## Deploy to GitHub Pages
+## Deployment
 
-The plume theme has been created with GitHub Actions: `.github/workflows/docs-deploy.yml`. You also need to make the following settings in the GitHub repository:
+Pushes to `main` run the frozen Bun install and production build in `.github/workflows/deploy.yml`. A successful build deploys the same artifact to GitHub Pages and Specht Labs Static Pages. Pull requests run the build check without uploading an artifact.
 
-- [ ] `settings > Actions > General`, Scroll to the bottom of the page, under `Workflow permissions`, check `Read and write permissions`, and click the save button.
-
-- [ ] `settings > Pages`, In `Build and deployment`, select `Deploy from a branch` for `Source`, choose `gh-pages` for `Branch`, and click the save button.
-  (The `gh-pages` branch may not exist upon first creation. You can complete the above setup first, push the code to the main branch, wait for `github actions` to finish, and then proceed with the setup.)
-
-- [ ] Modify the `base` option in `docs/.vuepress/config.ts`:
-  - If you are planning to deploy to `https://<USERNAME>.github.io/`, you can skip this step as `base` defaults to `"/"`.
-  - If you are planning to deploy to `https://<USERNAME>.github.io/<REPO>/`, meaning your repository URL is `https://github.com/<USERNAME>/<REPO>`, set `base` to `"/<REPO>/"`.
-
-To customize a domain name, please refer to [Github Pages](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)
-
-## Documents
+## References
 
 - [vuepress](https://vuepress.vuejs.org/)
 - [vuepress-theme-plume](https://theme-plume.vuejs.press/)
