@@ -23,7 +23,7 @@ With **13 years** of experience in Software Engineering and Site Reliability Eng
 </Card>
 </CardGrid>
 
-<LinkCard title="Download my CV" icon="pepicons-pencil:cv" href="/assets/Cedric_Specht.pdf"/>
+<LinkCard title="Download my CV" icon="pepicons-pencil:cv" href="https://cedi.github.io/cv/Cedric_Specht.pdf"/>
 <!-- markdownlint-enable MD033 -->
 
 ## What I Do
@@ -76,14 +76,14 @@ When I'm not writing YAML, I'm a hobbyist **analog photographer** with a collect
 - Alert on **symptoms**, not vitals
 - **Incidents are learning opportunities**
 - There is no single "root cause"
-:::
+  :::
 
 ::: details Essential Reading & Frameworks
 
 - [How Complex Systems Fail](https://how.complexsystems.fail) is required reading
 - System architecture exists mostly **in your head** and fails differently than expected
 - Recommend the [Above/Below the Line framework](https://snafucatchers.github.io/#2_3_The_above-the-line/below-the-line_framework) for incident analysis
-:::
+  :::
 
 ## Let's Connect
 
@@ -110,7 +110,7 @@ When I'm not writing YAML, I'm a hobbyist **analog photographer** with a collect
     - **Conducting regular 1:1s** to gather team preferences and concerns, feeding into a team charter and structure aligned with individual growth paths and company needs.
     - **Authoring a detailed integration plan** and design documents covering migration of observability, GitHub infrastructure, and ZTNA access to existing Databricks solutions, ensuring a successful integration into Databricks.
     - **Creation, maintenance and prioritisation** of an infrastructure tech debt backlog to ensure focused improvements during the migration phase and beyond.
-  :::
+      :::
 
 - Senior Site Reliability Engineer / Technical Lead - Microsoft Azure
   time=02/2022 to 05/2025 type=tip
@@ -128,7 +128,7 @@ When I'm not writing YAML, I'm a hobbyist **analog photographer** with a collect
     - **Technical Evangelism & Internal Training:** Speaker at Azure SRE Tech Talks, delivering sessions on reliability, deployment strategies, and Platform engineering.
     - **Maintained and expanded the Azure SRE Wiki**, working across all SRE organisations to standardise and document operational excellence.
     - **Recognition & Awards:** Azure Reliability Quality Star – Leadership Excellence Award for sustained high-quality contributions to Azure's engineering culture and reliability improvements
-  :::
+      :::
 
 - Tech-lead Manager Kubernetes SRE - German Edge Cloud
   time=07/2020 to 01/2022 type=tip
@@ -153,7 +153,6 @@ When I'm not writing YAML, I'm a hobbyist **analog photographer** with a collect
 
   ::: collapse
   - Details
-
     - **Disaster Recovery & Infrastructure Modernisation:** Led an initiative to improve disaster recovery playbooks using a more resilient storage solution, ensuring recovery procedures remained accessible even during blackout scenarios.
     - **Onboarding & Global Expansion:** Played a key role in onboarding and training a new SRE team in China, enabling 24/7 follow-the-sun operations.
     - **Community & Knowledge Sharing:** Organised meet-ups for MicrosoK Ireland's Open Source Club
