@@ -38,12 +38,12 @@
     "sass-embedded-linux-x64": "latest"
   },
   "overrides": {
-    "@mdit/plugin-attrs": "1.3.1",
-    "@mdit/plugin-footnote": "1.1.1",
-    "@mdit/plugin-mathjax-slim": "1.2.1",
-    "@mdit/plugin-sub": "1.1.1",
-    "@mdit/plugin-sup": "1.1.1",
-    "@mdit/plugin-tasklist": "1.1.1",
+    "@mdit/plugin-attrs": "1.3.3",
+    "@mdit/plugin-footnote": "1.1.2",
+    "@mdit/plugin-mathjax-slim": "1.2.2",
+    "@mdit/plugin-sub": "1.1.2",
+    "@mdit/plugin-sup": "1.1.2",
+    "@mdit/plugin-tasklist": "1.1.3",
     "@pengzhanbo/utils": "3.12.0"
   }
 }
