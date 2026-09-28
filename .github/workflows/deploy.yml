@@ -27,7 +27,7 @@ jobs:
           submodules: true
 
       - name: Set up pinned tools
-        uses: jdx/mise-action@v4
+        uses: jdx/mise-action@v5
 
       - name: Verify dependencies and build
         run: mise run ci
