@@ -52,21 +52,28 @@ const mainRepoName = computed(() => `${props.org.toLowerCase()}.github.io`);
 
 async function fetchProjects() {
   try {
-    const response = await fetch(
-      `https://api.github.com/orgs/${props.org}/repos`,
-      {
-        headers: {
-          Accept: "application/vnd.github+json",
-          "X-GitHub-Api-Version": "2022-11-28",
+    // The API paginates (default 30 per page), so walk all pages
+    const perPage = 100;
+    const repos: any[] = [];
+    for (let page = 1; ; page++) {
+      const response = await fetch(
+        `https://api.github.com/orgs/${props.org}/repos?per_page=${perPage}&page=${page}`,
+        {
+          headers: {
+            Accept: "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
         },
-      },
-    );
+      );
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch projects");
+      if (!response.ok) {
+        throw new Error("Failed to fetch projects");
+      }
+
+      const pageRepos = await response.json();
+      repos.push(...pageRepos);
+      if (pageRepos.length < perPage) break;
     }
-
-    const repos = await response.json();
 
     // Add sorting logic here
     projects.value = repos
@@ -82,16 +89,11 @@ async function fetchProjects() {
         stargazers_count: repo.stargazers_count, // Map the field
         created_at: repo.created_at, // Map the field
       }))
-      .sort((a: Repo, b: Repo) => {
-        // Sort by stars descending
-        if (a.stargazers_count !== b.stargazers_count) {
-          return b.stargazers_count - a.stargazers_count;
-        }
-        // If stars are equal, sort by creation date descending
-        return (
-          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-        );
-      });
+      .sort(
+        (a: Repo, b: Repo) =>
+          // Newest projects first
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+      );
   } catch (err: any) {
     error.value = err.message || "Unknown error";
   } finally {
