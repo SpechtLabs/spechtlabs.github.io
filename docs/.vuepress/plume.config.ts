@@ -21,7 +21,7 @@ export default defineThemeConfig({
   createTime: true,
 
   footer: {
-    message: '<a target="_self" href="/notes/impressum">Impressum</a> - <a target="_self" href="/notes/datenschutz">Datenschutz</a> - Powered by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a>',
+    message: '<a target="_self" href="/impressum/">Impressum</a> - <a target="_self" href="/datenschutz/">Datenschutz</a> - Powered by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a>',
     copyright: '&#169; 2025-2026 Cedric Specht',
   },
 
