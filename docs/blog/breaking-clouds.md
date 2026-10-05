@@ -83,7 +83,7 @@ Incident Management is a highly complex topic in it’s own and deserves it’s 
 ### Effective Recovery
 
 Recovering effectively again is a delicate topic and requires in-depth knowledge about the type of service and the specific infrastructure.
-There is no “one-size-fits-all” solution to improve recovery time (often referred to [“TTM”][4] or [“Time to mitigate"][4]).
+There is no “one-size-fits-all” solution to improve recovery time (often referred to as “TTM” or “Time to mitigate”).
 
 However, one key concept that we can talk about here is “graceful degradation”. When designing complex, distributed, systems, we can design our system in a way, that even in the event of a failure of one sub-component or micro-serve, the system maintains functionality with reduced capacity or functionality and prevent a total system collapse.
 Designing a complex system for graceful degradation can significantly limit the blast-radius of an incident.
@@ -121,4 +121,4 @@ As we continue to operate our service, each failure should be viewed as an oppor
 [7]: https://youtu.be/emTzpdPgg7Q?t=1035
 [8]: https://en.wikipedia.org/wiki/Chaos_engineering
 [9]: https://about.gitlab.com/blog/2017/02/01/gitlab-dot-com-database-incident/#third-incident
-[10]: <https://cedi.dev/post/above-the-line-framework/)https://cedi.dev/post/above-the-line-framework/>
+[10]: https://cedi.dev/post/above-the-line-framework/

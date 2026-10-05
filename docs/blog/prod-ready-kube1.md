@@ -340,7 +340,7 @@ This particular backend uses [the terraform cloud][22] to actually run terraform
 
 Remote backends give you the greatest level of flexibility and ease as it's possible to use terraform from any (or even multiple) CI/CD pipeline platform(s) and even your local machines without worrying about keeping tfstates, and variables in sync. All Variables (and for that matter secrets as well) are stored on the terraform cloud.
 
-You can find a tutorial on how to set up the remote backend [here][23].
+You can find a [tutorial on how to set up the remote backend][23] on HashiCorp Learn.
 
 ## Reliability Tip 4: Configure your KubeOne.yaml correctly
 
