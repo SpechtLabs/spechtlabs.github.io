@@ -1,0 +1,45 @@
+# Blog posts
+blog:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/blog/**"
+
+# The site's pages: home, about, Impressum and Datenschutz
+pages:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/README.md"
+          - "docs/notes/**"
+
+# The site's build: VuePress config, theme, components and dependencies
+site:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/.vuepress/**"
+          - "package.json"
+          - "bun.lock"
+          - "tsconfig.json"
+
+# Build and CI plumbing
+build:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/**"
+          - ".mise.toml"
+          - ".pre-commit-config.yaml"
+          - ".markdownlint-cli2.yaml"
+          - ".yamllint.yaml"
+          - ".editorconfig"
+          - "renovate.json"
+
+# Add 'enhancement' to any PR whose head branch starts with `feat` or `feature`
+enhancement:
+  - head-branch:
+      - "^feat"
+      - "^feature"
+
+# Add 'bug' to any PR whose head branch starts with `fix` or `bug`
+bug:
+  - head-branch:
+      - "^fix"
+      - "^bug"
