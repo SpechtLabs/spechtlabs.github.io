@@ -3,6 +3,7 @@ import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
 import { path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { plumeTheme } from "vuepress-theme-plume";
+import { githubDataPlugin } from "./plugins/github-data";
 
 export default defineUserConfig({
   base: "/",
@@ -22,6 +23,7 @@ export default defineUserConfig({
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, "./components"),
     }),
+    githubDataPlugin({ orgs: ["SpechtLabs"] }),
   ],
 
   theme: plumeTheme({

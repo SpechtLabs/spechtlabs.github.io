@@ -3,7 +3,7 @@ import Contributors from './Contributors.vue';
 
 defineProps<{
   org: string
-  repo: string
+  repo?: string
 }>()
 </script>
 

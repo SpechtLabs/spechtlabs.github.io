@@ -4,104 +4,61 @@
     and tools.</p>
   <br />
   <div>
-    <div v-if="loading" class="loading">Loading projects...</div>
-    <div v-else-if="error" class="error">Error: {{ error }}</div>
+    <div v-if="error" class="error">Error: {{ error }}</div>
     <div v-else :style="projectsGridStyles" class="projects-grid">
-      <a v-for="project in projects" :key="project.name" class="vp-home-feature" :href="project.homepage"
-        target="_blank" rel="noopener noreferrer">
+      <div v-for="project in projects" :key="project.name" class="vp-home-feature">
         <article class="box">
-          <h2 class="title" v-html="project.name" />
+          <div class="header">
+            <h2 class="title" v-html="project.name" />
+            <span class="stars" :title="starsLabel(project.stargazers_count)"
+              :aria-label="starsLabel(project.stargazers_count)">
+              <svg class="stars-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                <path fill="currentColor"
+                  d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" />
+              </svg>
+              {{ project.stargazers_count }}
+            </span>
+          </div>
           <p class="details" v-html="project.description" />
           <div class="tags">
             <span v-for="tag in project.topics" :key="tag" class="tag">{{
               tag
               }}</span>
           </div>
-          <div class="link-text">
-            <p class="link-text-value">
-              Visit Homepage <span class="link-text-icon">→</span>
-            </p>
+          <div class="actions">
+            <!-- The homepage button stretches over the whole card -->
+            <VPButton class="link-homepage" theme="brand" text="Visit Homepage" :href="project.homepage"
+              suffix-icon="mdi:arrow-right" />
+            <VPButton class="link-github" theme="alt" text="Visit GitHub" :href="project.html_url"
+              icon="simple-icons:github" />
           </div>
         </article>
-      </a>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from "vue";
-
-interface Repo {
-  name: string;
-  homepage: string;
-  description: string;
-  topics: string[];
-  stargazers_count: number; // Add this field
-  created_at: string; // Add this field
-}
+import VPButton from "@theme/VPButton.vue";
+import { computed } from "vue";
+import githubData from "@temp/github-data.js";
 
 const props = defineProps<{
   org: string;
 }>();
 
-const projects = ref<Repo[]>([]);
-const loading = ref(true);
-const error = ref("");
+const starsLabel = (count: number) =>
+  `${count} GitHub ${count === 1 ? "star" : "stars"}`;
 
-const mainRepoName = computed(() => `${props.org.toLowerCase()}.github.io`);
+// Fetched at build time by the github-data plugin
+const projects = computed(() => githubData.orgs[props.org]?.projects ?? []);
 
-async function fetchProjects() {
-  try {
-    // The API paginates (default 30 per page), so walk all pages
-    const perPage = 100;
-    const repos: any[] = [];
-    for (let page = 1; ; page++) {
-      const response = await fetch(
-        `https://api.github.com/orgs/${props.org}/repos?per_page=${perPage}&page=${page}`,
-        {
-          headers: {
-            Accept: "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28",
-          },
-        },
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch projects");
-      }
-
-      const pageRepos = await response.json();
-      repos.push(...pageRepos);
-      if (pageRepos.length < perPage) break;
-    }
-
-    // Add sorting logic here
-    projects.value = repos
-      .filter(
-        (repo: any) =>
-          repo.homepage && repo.name.toLowerCase() !== mainRepoName.value,
-      )
-      .map((repo: any) => ({
-        name: repo.name,
-        homepage: repo.homepage,
-        description: repo.description,
-        topics: repo.topics || [],
-        stargazers_count: repo.stargazers_count, // Map the field
-        created_at: repo.created_at, // Map the field
-      }))
-      .sort(
-        (a: Repo, b: Repo) =>
-          // Newest projects first
-          new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
-      );
-  } catch (err: any) {
-    error.value = err.message || "Unknown error";
-  } finally {
-    loading.value = false;
-  }
-}
-
-onMounted(fetchProjects);
+const error = computed(() => {
+  if (githubData.error) return githubData.error;
+  if (!githubData.orgs[props.org])
+    return `No GitHub data for '${props.org}'. Add it to githubDataPlugin in config.ts.`;
+  return "";
+});
 
 // --- New Logic for Grid Layout ---
 const projectsGridStyles = computed(() => {
@@ -130,28 +87,31 @@ const projectsGridStyles = computed(() => {
     }
   }
 
-  return {
-    display: "grid",
-    gridTemplateColumns: `repeat(${numColumns}, 1fr)`,
-    gap: "20px",
-  };
+  // The stylesheet caps this on narrower screens
+  return { "--columns": numColumns };
 });
 </script>
 
 <style scoped>
 .projects-grid {
-  /*
-  The grid properties (display, grid-template-columns, gap)
-  are now dynamically applied via v-bind:style.
-  You can remove the `grid-template-columns` and `gap` from here
-  if you want them fully controlled by the JS logic.
-  Keeping `display: grid;` here as a base is fine,
-  but since it's in the dynamic style, it's redundant.
-  Let's remove the redundant parts from here for clarity.
-  */
+  --columns: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  gap: 20px;
 }
 
-.loading,
+@media (max-width: 959px) {
+  .projects-grid {
+    grid-template-columns: repeat(min(var(--columns), 2), minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .error {
   text-align: center;
   font-size: 1.2em;
@@ -159,6 +119,7 @@ const projectsGridStyles = computed(() => {
 }
 
 .vp-home-feature {
+  position: relative;
   display: block;
   height: 100%;
   background-color: var(--vp-c-bg-soft);
@@ -193,6 +154,24 @@ const projectsGridStyles = computed(() => {
   transition: background-color var(--vp-t-color);
 }
 
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stars {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--vp-c-text-2);
+}
+
 .title {
   font-size: 16px;
   font-weight: 600;
@@ -222,20 +201,29 @@ const projectsGridStyles = computed(() => {
   border-radius: 4px;
 }
 
-.link-text {
-  padding-top: 8px;
-}
-
-.link-text-value {
+/* Cards are too narrow for two buttons side by side, so stack them full width */
+.actions {
   display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--vp-c-brand-1);
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
 }
 
-.link-text-icon {
-  margin-left: 6px;
+.actions > .vp-button + .vp-button {
+  margin-left: 0;
+}
+
+.link-homepage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+/* Keep the GitHub button clickable above the stretched homepage button */
+.link-github {
+  position: relative;
+  z-index: 1;
 }
 
 .section_title {

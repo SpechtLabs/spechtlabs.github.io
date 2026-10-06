@@ -1,10 +1,9 @@
 <template>
     <h2 class="section_title">Contributors</h2>
-    <p class="section_description">Your contributions matter. Here's to everyone who's helped bring this to life.</p>
+    <p class="section_description">{{ description }}</p>
     <br />
     <div>
-        <div v-if="loading" class="loading">Loading contributors...</div>
-        <div v-else-if="error" class="error">Error: {{ error }}</div>
+        <div v-if="error" class="error">Error: {{ error }}</div>
         <div v-else-if="hasContributors" class="contributors-grid-container">
             <!-- Apply centering and wrapping styles here -->
             <div class="contributors-grid">
@@ -23,92 +22,36 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-
-interface Contributor {
-    login: string
-    avatar_url: string
-    html_url: string
-    contributions: number // This field might not be present for org members, will be 0 if not
-    type: string // This field might not be present for org members, will be "User" if not
-}
+import { computed } from 'vue'
+import githubData from '@temp/github-data.js'
 
 const props = defineProps<{
     org: string
     repo?: string // Repo is still optional
 }>()
 
-const contributors = ref<Contributor[]>([]);
-const loading = ref(true);
-const error = ref('');
+const description = computed(() => props.repo
+    ? `Your contributions matter. Here's to everyone who's helped bring ${props.repo} to life.`
+    : `Your contributions matter. Here's to everyone who's helped build any of the ${props.org} projects.`);
 
-const hasContributors = computed(() => !!contributors.value?.length);
+// Fetched at build time by the github-data plugin
+const orgData = computed(() => githubData.orgs[props.org]);
 
-const gitHubHeaders = {
-    'Accept': 'application/vnd.github+json',
-    'X-GitHub-Api-Version': '2022-11-28',
-};
+const error = computed(() => {
+    if (githubData.error) return githubData.error;
+    if (!orgData.value) return `No GitHub data for '${props.org}'. Add it to githubDataPlugin in config.ts.`;
+    if (props.repo && !orgData.value.repoContributors[props.repo]) return `No contributors for ${props.org}/${props.repo}.`;
+    return '';
+});
 
-async function fetchContributors() {
-    try {
-        let apiUrl: string;
-        let fetchedData: any[] = []; // Use 'any[]' temporarily for raw fetch response
+const contributors = computed(() => {
+    if (!orgData.value) return [];
+    return props.repo
+        ? orgData.value.repoContributors[props.repo] ?? []
+        : orgData.value.contributors;
+});
 
-        if (props.repo) {
-            // If repo is provided, fetch contributors for that specific repo
-            apiUrl = `https://api.github.com/repos/${props.org}/${props.repo}/contributors`;
-            const res = await fetch(apiUrl, { headers: gitHubHeaders });
-
-            if (!res.ok) {
-                throw new Error(`Failed to fetch contributors for ${props.org}/${props.repo}: ${res.statusText}`);
-            }
-            fetchedData = await res.json();
-
-            // For repo contributors, filter out bots and use their contributions count
-            const uniqueUsers = Array.from(new Map(
-                fetchedData
-                    .filter((c: any) => c.type === "User")
-                    .map((c: any) => [c.login, c])
-            ).values());
-            uniqueUsers.sort((a, b) => b.contributions - a.contributions);
-            contributors.value = uniqueUsers as Contributor[];
-
-        } else {
-            // If NO repo is provided, fetch public members of the organization
-            apiUrl = `https://api.github.com/orgs/${props.org}/public_members?per_page=100`; // Added per_page for efficiency, can paginate if needed
-            const res = await fetch(apiUrl, { headers: gitHubHeaders });
-
-            if (!res.ok) {
-                // Check if it's a 404 for a non-existent org, or other error
-                if (res.status === 404) {
-                    throw new Error(`Organization '${props.org}' not found or has no public members.`);
-                }
-                throw new Error(`Failed to fetch public members for ${props.org}: ${res.statusText}`);
-            }
-            fetchedData = await res.json();
-
-            // For org members, they don't have 'contributions' directly from this endpoint.
-            // We'll map them to the Contributor interface. 'contributions' can be 0 or omitted.
-            // They are all 'User' type, so no need to filter by type.
-            contributors.value = fetchedData.map((member: any) => ({
-                login: member.login,
-                avatar_url: member.avatar_url,
-                html_url: member.html_url,
-                contributions: 0, // Default to 0 as this endpoint doesn't provide it
-                type: 'User', // Assume all public members are 'User'
-            }));
-            // No sorting by contributions for org members, as it's not available.
-        }
-
-    } catch (err: any) {
-        error.value = err.message || 'An unknown error occurred';
-        console.error("Fetch error:", err); // Log full error for debugging
-    } finally {
-        loading.value = false;
-    }
-}
-
-onMounted(fetchContributors);
+const hasContributors = computed(() => !!contributors.value.length);
 </script>
 
 <style scoped>
@@ -175,7 +118,6 @@ onMounted(fetchContributors);
     color: var(--vp-c-text-1);
 }
 
-.loading,
 .error,
 .no-contributors {
     text-align: center;
