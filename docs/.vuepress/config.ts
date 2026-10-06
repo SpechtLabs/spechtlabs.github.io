@@ -1,9 +1,7 @@
+import { docsKitPlugin } from "@spechtlabs/docs-kit";
 import { viteBundler } from "@vuepress/bundler-vite";
-import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
-import { path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import { plumeTheme } from "vuepress-theme-plume";
-import { githubDataPlugin } from "./plugins/github-data";
 
 export default defineUserConfig({
   base: "/",
@@ -20,10 +18,8 @@ export default defineUserConfig({
   shouldPrefetch: false,
 
   plugins: [
-    registerComponentsPlugin({
-      componentsDir: path.resolve(__dirname, "./components"),
-    }),
-    githubDataPlugin({ orgs: ["SpechtLabs"] }),
+    // Projects and contributors, fetched from GitHub at build time
+    docsKitPlugin({ github: { orgs: ["SpechtLabs"] } }),
   ],
 
   theme: plumeTheme({

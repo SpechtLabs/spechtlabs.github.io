@@ -21,9 +21,9 @@ config:
           text: Github →
           link: https://github.com/spechtlabs/
 
-  - type: VPProjectsCustom
+  - type: VPProjects
     org: SpechtLabs
 
-  - type: VPContributorsCustom
+  - type: VPContributors
     org: SpechtLabs
 ---
