@@ -1,9 +1,9 @@
 name: Website
 
-# Lints and builds the website for every pull request; a push to main (or a
-# run from the Actions tab) also publishes the build to GitHub Pages and to
-# Specht Labs Static Pages. The whole repository is the website, so there is
-# no path filter.
+# Lints and builds the website for every pull request; a push to main, the
+# daily schedule (or a run from the Actions tab) also publishes the build to
+# GitHub Pages and to Specht Labs Static Pages. The whole repository is the
+# website, so there is no path filter.
 on:
   push:
     branches:
@@ -13,6 +13,10 @@ on:
     branches:
       - main
   workflow_dispatch:
+  # Projects and contributors are fetched from the GitHub API at build time,
+  # so rebuild daily to keep them current between pushes.
+  schedule:
+    - cron: "17 4 * * *"
 
 permissions:
   contents: read
@@ -86,9 +90,13 @@ jobs:
       # disagree.
       - name: Build
         run: mise run build
+        env:
+          # Authenticates the build-time GitHub API calls for projects and
+          # contributors (60 requests/hour without it, 1,000 with it).
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Artifact for Website
-        # Only the deploy jobs consume this, and they run on push/dispatch.
+        # Only the deploy jobs consume this, and they run on push/dispatch/schedule.
         if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
@@ -102,7 +110,7 @@ jobs:
     needs:
       - lint
       - build
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event_name == 'schedule'
     permissions:
       id-token: write
       pages: write
@@ -131,7 +139,7 @@ jobs:
     needs:
       - lint
       - build
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event_name == 'schedule'
     permissions:
       id-token: write
       pages: write
