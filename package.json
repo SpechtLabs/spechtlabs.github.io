@@ -18,7 +18,7 @@
     "typecheck": "tsc -p tsconfig.json"
   },
   "devDependencies": {
-    "@types/node": "^24.19.1",
+    "@types/node": "^24.19.2",
     "@vuepress/bundler-vite": "2.0.0-rc.31",
     "http-server": "^14.1.1",
     "sass-embedded": "^1.105.1",
