@@ -34,12 +34,12 @@
     "mermaid": "^12.2.0"
   },
   "overrides": {
-    "@mdit/plugin-attrs": "1.3.4",
-    "@mdit/plugin-footnote": "1.1.3",
+    "@mdit/plugin-attrs": "1.4.0",
+    "@mdit/plugin-footnote": "1.1.4",
     "@mdit/plugin-mathjax-slim": "1.2.3",
-    "@mdit/plugin-sub": "1.1.3",
-    "@mdit/plugin-sup": "1.1.3",
-    "@mdit/plugin-tasklist": "1.1.4",
+    "@mdit/plugin-sub": "1.1.4",
+    "@mdit/plugin-sup": "1.1.4",
+    "@mdit/plugin-tasklist": "1.2.0",
     "@pengzhanbo/utils": "3.12.0"
   }
 }
